@@ -155,18 +155,16 @@
 //     console.log(entrada);
 // }while(entrada != "esc")
 
-let metodoPago = prompt ("Ingrese Metodo de Pago")
-// const metodoPago = "efectivo";
-switch(metodoPago.toLocaleLowerCase){
-    case "efectivo":
-        console.log("Pagaste en efectivo")
-        break;
-    case "tarjeta":
-        console.log("Pagaste con tarjeta")
-        break;
-    default:
-    console.log("Pagaste con otro medio de pago")
-    break;
-}
-
-
+// let metodoPago = prompt ("Ingrese Metodo de Pago")
+// // const metodoPago = "efectivo";
+// switch(metodoPago.toLocaleLowerCase){
+//     case "efectivo":
+//         console.log("Pagaste en efectivo")
+//         break;
+//     case "tarjeta":
+//         console.log("Pagaste con tarjeta")
+//         break;
+//     default:
+//     console.log("Pagaste con otro medio de pago")
+//     break;
+// }
