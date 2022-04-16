@@ -168,3 +168,232 @@
 //     console.log("Pagaste con otro medio de pago")
 //     break;
 // }
+
+
+///////////////////// funciones clase 4
+
+////////////// declaracion de una funcion
+
+// let num1 = "5"
+// let num2 = 3
+
+// function sumar(){
+//     console.log (2+2)
+//     // alert(2+2)
+//     //otros metodos de llamar en pantalla
+// }
+
+///////////llamar a la funcion
+
+// sumar()
+
+///////////Expresion de funcion
+
+// const restar = function(){
+//     console.log(num1 - num2)
+// }
+
+// // console.log(restar)
+// restar()
+
+
+
+//// holsting sube todo lo que es funcion&var(solo la definicion se lleva)
+//// para que se pueda ingresar a llamar la funcion antes de declararla(escribirla)
+
+////////Funciones
+
+// prompt()
+// alert()
+// console.log()
+// console.log(parseInt(num1))
+
+//////////Metodos
+
+// console.log(num2.toString())
+
+///////Parametros
+
+// function saludar (nombre, apellido){
+//     console.log(nombre, apellido)
+//     console.log("Hola " + nombre + " " + apellido)
+// }
+
+// // saludar()
+
+// // saludar("Adrian")
+
+// saludar("Adrian", "Gonzalez")
+
+
+
+// let nombre = prompt("Tu nombre")
+// let alimento  = prompt("Tu alimento")
+// // `´
+// function comer(nombre, comida= "Fideos"){
+// // si no se pone nada en tu alimento automaticamente pasa a llamarse fideos el alimento
+//     // console.log(`${nombre} come ${comida}`)
+//     console.log(nombre + " come " + comida)
+// }
+// comer(nombre,alimento)
+
+// let num1 = Number(prompt("Ingresar numero 1"))
+// let num2  = Number(prompt("Ingresar numero 2"))
+
+// function sumar(n1, n2){
+//     console.log(n1+n2)
+// }
+
+// sumar(num1,num2)
+
+//// si una funcion no requiere parametros no importa 
+// function saludar (){
+//     console.log("Hola a todos")
+// }
+
+// saludar(25)
+
+////////////////// ejemplo
+// let saldo = 5000;
+
+// entrarAlCajero();
+
+// function entrarAlCajero(){
+//     let tarjeta = confirm ("Ingrese Tarjeta")
+//     ingresarClave (tarjeta)
+// }
+
+// function ingresarClave (t){
+//     if(t){
+//         let clave = prompt("Ingresar clave");
+//         validarClave(clave)
+//     }else {
+//         alert("Es necesaria una tarjeta")
+//     }
+// }
+
+// function validarClave(codigo){
+//     if(codigo=== "1234"){
+//         seleccionarOperacion()
+//     }else{
+//         alert("Clave incorrecta")
+//     }
+// }
+
+// function seleccionarOperacion(){
+//     console.log("1: retirar dinero")
+//     console.log("2: consultar saldo")
+//     console.log("3: salir")
+//     console.log("-----------------")
+
+//     let op = prompt("Ingresar opcion")
+//     switch(op){
+//         case "1":
+//             let monto = Number(prompt("Monto a retirar"))
+//             retirarDinero()
+//             break;
+//         case "2":
+//             consultarSaldo()
+//             break;
+//         case "3":
+//             salir();
+//             break;  
+//         default:
+//             console.log("Operacion Invalida")  
+//             break;   
+//     }
+// }
+
+// function retirarDinero(dinero){
+//     if(dinero> saldo){
+//         alert("Saldo Insuficiente")
+//     }else {
+//         saldo -= dinero;
+//         alert("retiraste " + dinero)
+//     }
+//     seleccionarOperacion()
+// }
+
+// function consultarSaldo(){
+//     alert("Su saldo es: " + saldo)
+//     seleccionarOperacion()
+// }
+
+// function salir(){
+//     alert("Fin de la operacion")
+// }
+
+///////////// revisar el ejemplo de arriba pq me aparece NaN cuando consulto el monto luego de retirar dinero
+
+//////////////////// otro ejemplo
+
+// function hacerAlgo(){
+//     let a=1
+// }
+
+// let resultado = hacerAlgo()
+// console.log(resultado)
+
+// function sumar (a, b){
+//     return a + b;
+// }
+
+// let resultado = sumar("2", "4");
+// console.log(resultado)
+
+///// otro ejemplo
+
+// let total = 0;
+
+// function agregarAlCarrito (precio){
+//     return total += precio
+// }
+
+// function calcularImpuesto(total){
+//     return 1.21 * total;
+// }
+
+// total = agregarAlCarrito(400)
+// total = agregarAlCarrito(300)
+// total = agregarAlCarrito(200)
+
+// const totalPagar = calcularImpuesto(total)
+
+// console.log(total)
+// console.log("El total a pagar es " + totalPagar)
+
+
+
+// //////// scope variables locales y globales
+
+
+
+// for(let i =0; i<10; i+=1){
+//     console.log(i)
+// }
+// /// aca daria error si lo ejecuto el console.log por fuera de la funcion
+// console.log(i)
+
+
+//////////////////// funciones anonimas y flecha
+
+
+const aprender = function(){
+    console.log("En el curso de javascript")
+}
+
+const aprender2 = () => {
+    console.log("En el curso de javascript")
+}
+
+const aprender3 = () => console.log("En el curso de javascript")
+
+const aprender4 = () => {return "En el curso de javascript"}
+
+const aprender5 = () => "En el curso de javascript"
+
+aprender()
+aprender2()
+aprender3()
+console.log(aprender4())
+console.log(aprender5())
