@@ -378,22 +378,27 @@
 //////////////////// funciones anonimas y flecha
 
 
-const aprender = function(){
-    console.log("En el curso de javascript")
-}
+// const aprender = function(){
+//     console.log("En el curso de javascript")
+// }
 
-const aprender2 = () => {
-    console.log("En el curso de javascript")
-}
+// const aprender2 = () => {
+//     console.log("En el curso de javascript")
+// }
 
-const aprender3 = () => console.log("En el curso de javascript")
+// const aprender3 = () => console.log("En el curso de javascript")
 
-const aprender4 = () => {return "En el curso de javascript"}
+// const aprender4 = () => {return "En el curso de javascript"}
 
-const aprender5 = () => "En el curso de javascript"
+// const aprender5 = () => "En el curso de javascript"
 
-aprender()
-aprender2()
-aprender3()
-console.log(aprender4())
-console.log(aprender5())
+// aprender()
+// aprender2()
+// aprender3()
+// console.log(aprender4())
+// console.log(aprender5())
+
+////////////////////////////////// Clase 5 ////////////////////////////////
+
+
+
