@@ -229,7 +229,7 @@
 
 // let nombre = prompt("Tu nombre")
 // let alimento  = prompt("Tu alimento")
-// // `´
+// // `´ comillas
 // function comer(nombre, comida= "Fideos"){
 // // si no se pone nada en tu alimento automaticamente pasa a llamarse fideos el alimento
 //     // console.log(`${nombre} come ${comida}`)
@@ -378,22 +378,205 @@
 //////////////////// funciones anonimas y flecha
 
 
-const aprender = function(){
-    console.log("En el curso de javascript")
+// const aprender = function(){
+//     console.log("En el curso de javascript")
+// }
+
+// const aprender2 = () => {
+//     console.log("En el curso de javascript")
+// }
+
+// const aprender3 = () => console.log("En el curso de javascript")
+
+// const aprender4 = () => {return "En el curso de javascript"}
+
+// const aprender5 = () => "En el curso de javascript"
+
+// aprender()
+// aprender2()
+// aprender3()
+// console.log(aprender4())
+// console.log(aprender5())
+
+
+//////////////////////////// clase 5 ////////////////////////////////////
+
+//////////// objetos
+////////// Semantica de producto tiene relacion
+// const nombre = "Zapatillas";
+// const precio = 4000;
+// const disponible = true
+
+// const producto1 = {} /// a esto se lo conoce como objeto literal
+
+// // console.log(typeof producto)
+
+// const producto2 = {
+//     nombre: "Tapatillas" // a esto se llama propiedad o llave
+// }
+
+
+// const producto3 = {
+//     nombre: "TV" // representa un valor
+// }
+
+// const producto = {
+//     nombre: "Zapatillas", // la , es importante
+//     precio: 4500,
+//     disponible: true,
+// }
+
+// console.log(producto)
+// // alert(producto)
+// // document.write(producto)
+// // resultado.innerHTML = producto;
+
+// alert(producto.nombre + " " + producto.precio)
+// // alert(`${producto.nombre} ${producto.precio}`)
+
+// document.write(producto.nombre)
+// resultado.innerHTML = producto.nombre
+
+// // producto = {
+// //     nombre: "Zapatos"
+// // }
+// // console.log(producto)
+
+// producto.nombre = "chanclas"
+
+// console.log(producto)
+
+
+////////////// constructores ///
+
+// function Producto(n, p, d){
+//     this.nombre = n;
+//     this.precio = p;
+//     this.disponible = d;
+// }
+
+// // const producto ={
+// //     nombre: "fasaf",
+// //     precio: 23123,
+// //     disponible: true
+// // }
+
+// let p1= new Producto("CocaCola", 200, true)
+// let p2= new Producto("Sprite", 199, true)
+// let p3= new Producto("Pepsi", 150, false)
+// let p4= new Producto("Locion para afeitarse", 500, true)
+
+
+// console.log(p1)
+// console.log(p2)
+// console.log(p3)
+// console.log(p4)
+
+// function Mascotas(){
+
+// }
+
+// function Mascotas(){
+    
+// }
+
+// function Superheroes(n, a, p){ ////// forma correcta para aplicar
+//     this.nombre = n;
+//     this.alterego = a;
+//     this.poder = p;
+// }
+
+
+// // let batman ={ ////// forma incorrecta para aplicar dado que se pierde tiempo
+// //     nombre: "Bruno Dias",
+// //     alterego: "batman",
+// //     superpoder: "Cinturon y plata"
+// // }
+
+// // let Superman ={
+// //     nombre: "Clark Kent",
+// //     alterego: "Superman",
+// //     superpoder: "Super fuerza"
+// // }
+
+// let batman= new Superheroes("Bruno Diaz", "Batman", "Cinturon y plata")
+// let superman= new Superheroes("Clark Kent", "Superman", "Superfuerza")
+
+// console.log(batman)
+// console.log(superman)
+
+
+////////////////////// otro ejemplo
+
+// const producto ={
+//     nombre: "TV",
+//     precio: 40000,
+//     disponible: true,
+//     mostrarInfo: function(){
+//         return `El producto: ${this.nombre} tiene un precio de ${this.precio} y su disponibilidad es ${this.disponible}`
+//     }
+// }
+
+// ///// visualizar si dentro del objeto literal existe un item y que responda verdadero o falso:
+// console.log("img" in producto) // falso
+// console.log("disponible" in producto) // verdadero
+
+// console.log(producto)
+// console.log(producto.nombre)
+// console.log(producto.precio)
+// console.log(producto.disponible)
+// let informacion = producto.mostrarInfo()
+// console.log(informacion)
+
+// function saludar(){
+//     console.log("Hola")
+// }
+
+// saludar()
+// producto.mostrarInfo()
+
+
+/////// propiedades de la ventana del navegador
+// console.log(this)
+// console.log(window)
+
+
+// console.log(producto)
+// console.dir(producto)
+
+// for(let prop in window){
+//     console.log(prop)
+// }
+
+// for(let prop in window.document.body){
+//     console.log(prop.children)
+// }
+
+/////////////
+
+// for(let item in producto){
+//     console.log(item)
+// }
+
+
+/////////////////////////////////// otro ejemplo
+
+class Producto{
+    constructor(n, p, d){
+    this.nombre = n;
+    this.precio = p;
+    }
+    disponible = true;
+    cantidad=20
+
+    mostrarInfor=()=>{
+        return "El producto"
+    }
 }
 
-const aprender2 = () => {
-    console.log("En el curso de javascript")
-}
+const p1 = new Producto("Helado", 200)
 
-const aprender3 = () => console.log("En el curso de javascript")
+console.dir(p1)
 
-const aprender4 = () => {return "En el curso de javascript"}
-
-const aprender5 = () => "En el curso de javascript"
-
-aprender()
-aprender2()
-aprender3()
-console.log(aprender4())
-console.log(aprender5())
+console.log(p1.nombre)
+console.log(p1.mostrarInfor())
