@@ -146,6 +146,19 @@ function razaClase (tipoRaza, opcion){
 }
 
 function resultadoClaseHumanoGuerrero(){
+    console.log("Ataque: 80")
+    console.log("Resistencia: 60")
+    console.log("Mana: 50")
+    console.log("Ataque magico: 40")
+    console.log("Resistencia magica: 60")
+    console.log("Velocidad: 75")
+    console.log("Presicion: 65")
+    console.log("Inteligencia: 60")
+    console.log("Rango: 1")
+    console.log("--------------------------")
+}
+
+function resultadoClaseHumanoTirador(){
     console.log("Ataque: 60")
     console.log("Resistencia: 50")
     console.log("Mana: 100")
@@ -155,7 +168,179 @@ function resultadoClaseHumanoGuerrero(){
     console.log("Presicion: 60")
     console.log("Inteligencia: 70")
     console.log("Rango: 4")
+    console.log("--------------------------")
 }
+
+function resultadoClaseHumanoPaladin(){
+    console.log("Ataque: 40")
+    console.log("Resistencia: 80")
+    console.log("Mana: 80")
+    console.log("Ataque magico: 70")
+    console.log("Resistencia magica: 90")
+    console.log("Velocidad: 40")
+    console.log("Presicion: 50")
+    console.log("Inteligencia: 80")
+    console.log("Rango: 1")
+    console.log("--------------------------")
+}
+
+function resultadoClaseOrcoMago(){
+    console.log("Ataque: 60")
+    console.log("Resistencia: 50")
+    console.log("Mana: 100")
+    console.log("Ataque magico: 90")
+    console.log("Resistencia magica: 50")
+    console.log("Velocidad: 55")
+    console.log("Presicion: 60")
+    console.log("Inteligencia: 70")
+    console.log("Rango: 4")
+    console.log("--------------------------")
+}
+
+function resultadoClaseOrcoGuerrero(){
+    console.log("Ataque: 80")
+    console.log("Resistencia: 60")
+    console.log("Mana: 50")
+    console.log("Ataque magico: 40")
+    console.log("Resistencia magica: 60")
+    console.log("Velocidad: 75")
+    console.log("Presicion: 65")
+    console.log("Inteligencia: 60")
+    console.log("Rango: 1")
+    console.log("--------------------------")
+}
+
+function resultadoClaseOrcoTirador(){
+    console.log("Ataque: 90")
+    console.log("Resistencia: 30")
+    console.log("Mana: 70")
+    console.log("Ataque magico: 30")
+    console.log("Resistencia magica: 30")
+    console.log("Velocidad: 90")
+    console.log("Presicion: 95")
+    console.log("Inteligencia: 65")
+    console.log("Rango: 5")
+    console.log("--------------------------")
+}
+
+function resultadoClaseOrcoPaladin(){
+    console.log("Ataque: 40")
+    console.log("Resistencia: 80")
+    console.log("Mana: 80")
+    console.log("Ataque magico: 70")
+    console.log("Resistencia magica: 90")
+    console.log("Velocidad: 40")
+    console.log("Presicion: 50")
+    console.log("Inteligencia: 80")
+    console.log("Rango: 1")
+    console.log("--------------------------")
+}
+
+function resultadoClaseElfoMago(){
+    console.log("Ataque: 60")
+    console.log("Resistencia: 50")
+    console.log("Mana: 100")
+    console.log("Ataque magico: 90")
+    console.log("Resistencia magica: 50")
+    console.log("Velocidad: 55")
+    console.log("Presicion: 60")
+    console.log("Inteligencia: 70")
+    console.log("Rango: 4")
+    console.log("--------------------------")
+}
+
+function resultadoClaseElfoGuerrero(){
+    console.log("Ataque: 80")
+    console.log("Resistencia: 60")
+    console.log("Mana: 50")
+    console.log("Ataque magico: 40")
+    console.log("Resistencia magica: 60")
+    console.log("Velocidad: 75")
+    console.log("Presicion: 65")
+    console.log("Inteligencia: 60")
+    console.log("Rango: 1")
+    console.log("--------------------------")
+}
+
+function resultadoClaseElfoTirador(){
+    console.log("Ataque: 90")
+    console.log("Resistencia: 30")
+    console.log("Mana: 70")
+    console.log("Ataque magico: 30")
+    console.log("Resistencia magica: 30")
+    console.log("Velocidad: 90")
+    console.log("Presicion: 95")
+    console.log("Inteligencia: 65")
+    console.log("Rango: 5")
+    console.log("--------------------------")
+}
+
+function resultadoClaseElfoPaladin(){
+    console.log("Ataque: 40")
+    console.log("Resistencia: 80")
+    console.log("Mana: 80")
+    console.log("Ataque magico: 70")
+    console.log("Resistencia magica: 90")
+    console.log("Velocidad: 40")
+    console.log("Presicion: 50")
+    console.log("Inteligencia: 80")
+    console.log("Rango: 1")
+    console.log("--------------------------")
+}
+
+
+function resultadoClaseEnanoMago(){
+    console.log("Ataque: 60")
+    console.log("Resistencia: 50")
+    console.log("Mana: 100")
+    console.log("Ataque magico: 90")
+    console.log("Resistencia magica: 50")
+    console.log("Velocidad: 55")
+    console.log("Presicion: 60")
+    console.log("Inteligencia: 70")
+    console.log("Rango: 4")
+    console.log("--------------------------")
+}
+
+function resultadoClaseEnanoGuerrero(){
+    console.log("Ataque: 80")
+    console.log("Resistencia: 60")
+    console.log("Mana: 50")
+    console.log("Ataque magico: 40")
+    console.log("Resistencia magica: 60")
+    console.log("Velocidad: 75")
+    console.log("Presicion: 65")
+    console.log("Inteligencia: 60")
+    console.log("Rango: 1")
+    console.log("--------------------------")
+}
+
+function resultadoClaseEnanoTirador(){
+    console.log("Ataque: 90")
+    console.log("Resistencia: 30")
+    console.log("Mana: 70")
+    console.log("Ataque magico: 30")
+    console.log("Resistencia magica: 30")
+    console.log("Velocidad: 90")
+    console.log("Presicion: 95")
+    console.log("Inteligencia: 65")
+    console.log("Rango: 5")
+    console.log("--------------------------")
+}
+
+function resultadoClaseEnanoPaladin(){
+    console.log("Ataque: 40")
+    console.log("Resistencia: 80")
+    console.log("Mana: 80")
+    console.log("Ataque magico: 70")
+    console.log("Resistencia magica: 90")
+    console.log("Velocidad: 40")
+    console.log("Presicion: 50")
+    console.log("Inteligencia: 80")
+    console.log("Rango: 1")
+    console.log("--------------------------")
+}
+
 
 const finalizar = () => {return "Ya se ha seleccionado su personaje"}
 
