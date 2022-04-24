@@ -561,22 +561,91 @@
 
 /////////////////////////////////// otro ejemplo
 
-class Producto{
-    constructor(n, p, d){
-    this.nombre = n;
-    this.precio = p;
-    }
-    disponible = true;
-    cantidad=20
+// class Producto{
+//     constructor(n, p, d){
+//     this.nombre = n;
+//     this.precio = p;
+//     }
+//     disponible = true;
+//     cantidad=20
 
-    mostrarInfor=()=>{
-        return "El producto"
-    }
-}
+//     mostrarInfor=()=>{
+//         return "El producto"
+//     }
+// }
 
-const p1 = new Producto("Helado", 200)
+// const p1 = new Producto("Helado", 200)
 
-console.dir(p1)
+// console.dir(p1)
 
-console.log(p1.nombre)
-console.log(p1.mostrarInfor())
+// console.log(p1.nombre)
+// console.log(p1.mostrarInfor())
+
+
+//////////////////////////// clase 6 ////////////////////////////////////
+
+////// array se representa por [], objetos se representan por {}
+
+// const numeros =[]
+// console.log(numeros)
+// console.log(typeof numeros)
+// console.group ("Definicion de Arrays") ///agrupar los console. log desde el .group hasta el groupend
+// const numeros =[10,20,30,40,50]
+// console.log(numeros)
+// // alert(numeros)
+// //document.write(numeros)
+
+// document.write(numeros[0])
+// document.write(numeros[1])
+
+// const nombres = Array('Manuel', 'Lucio', 'Luis')
+// console.log(nombres)
+// console.groupEnd()
+
+// console.group ("Indices")
+// console.log (nombres[0])
+// console.log ("numeros[0] + 5")
+// console.log ("nombres[0] + ' Alfonso")
+
+// console.groupEnd()
+
+
+// console.group ("Arrays Mixtos")
+// const mixto = [2, "P1", true, {x:15, y:0}, ["Milton", "Lucio"]]
+// console.log(mixto)
+
+// console.groupEnd()
+
+// console.group ("Recorrer Arrays")
+// const meses = ["Enero", "Feberero", "Marzo", "Abril"]
+
+// for(let i=0; i<meses.length; i+1){
+//     console.log(meses[i])
+//     document.write("<p>" + meses[1] + "</p>")
+// }
+// console.groupEnd()
+
+
+// console.group ("Propiedades Arrays")
+// console.log ("Meses:" + meses.length)
+// console.log ("Numeros:" + numeros.length)
+// console.log ("Mixto:" + mixto.length)
+// console.log ("Nombres:" + nombres.length)
+
+// console.groupEnd()
+// const cadena = "Dabale arroz a la zorra el abad"
+// console.log(cadena.length)
+// let saludo = "Hola "
+// let emoji = "😊" ////// en el teclado para emojis se usa la tecla windows + .
+// console.log(emoji.length)
+// console.log(saludo.length)
+
+
+
+
+const vacios = [{},{},{},{}]
+console.log(vacios)
+
+const mascota = [{nombre: "homero", edad:15},{nombre: "felipe", edad:9},{},{}]
+console.log(mascota)
+
