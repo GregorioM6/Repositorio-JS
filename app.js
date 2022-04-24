@@ -348,6 +348,3 @@ alert(finalizar())
 
 console.log(finalizar())
 
-// // function salir(){
-// //     alert("Fin de la operacion")
-// // }
