@@ -162,3 +162,26 @@ function resultadoClase1(){
 // // function salir(){
 // //     alert("Fin de la operacion")
 // // }
+
+
+class Estadistica{
+    constructor(ataque , velocidad){
+        this.ataque = ataque;
+        this.velocidad = velocidad
+    }
+}
+
+const personaje = new Estadistica (80, 100)
+console.log(personaje)
+
+
+function mejorarPersonaje(){
+
+    nuevaestadistica = 80 +  20;
+    return nuevaestadistica;
+
+}
+const personaje2 = new Estadistica(mejorarPersonaje(), 50)
+
+
+console.log(personaje2)
