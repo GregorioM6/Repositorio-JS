@@ -1,23 +1,210 @@
 class Personaje{
-    constructor(raza, clase){
-    this.raza = raza;
-    this.clase = clase;
+    constructor( raza, clase) {
+        this.raza = raza;
+        this.clase = clase;
+        this.estadisticas = this.calcularEstadisticas(this.raza, this.clase);
+    }
+    calcularEstadisticas(raza, clase){
+        let estadisticas = new Estadisticas();
+        if(raza == "Humano" && clase == "Mago") {
+            estadisticas.ataque = estadisticas.ataque + 3;
+            estadisticas.defensa = estadisticas.defensa + 1;
+            estadisticas.mana = estadisticas.mana + 5;
+            estadisticas.ataqueMagico = estadisticas.ataqueMagico + 5;
+            estadisticas.defensaMagica = estadisticas.defensaMagica + 2;
+            estadisticas.velocidad = estadisticas.velocidad + 2;
+            estadisticas.presicion = estadisticas.presicion + 3;
+            estadisticas.inteligencia = estadisticas.inteligencia + 4;
+            estadisticas.agilidad = estadisticas.agilidad + 1;
+            return estadisticas;
+        }
+        else if(raza == "Humano" && clase == "Guerrero") {
+            estadisticas.ataque = estadisticas.ataque + 4;
+            estadisticas.defensa = estadisticas.defensa + 2;
+            estadisticas.mana = estadisticas.mana + 2;
+            estadisticas.ataqueMagico = estadisticas.ataqueMagico + 1;
+            estadisticas.defensaMagica = estadisticas.defensaMagica + 1;
+            estadisticas.velocidad = estadisticas.velocidad + 3;
+            estadisticas.presicion = estadisticas.presicion + 2;
+            estadisticas.inteligencia = estadisticas.inteligencia + 2;
+            estadisticas.agilidad = estadisticas.agilidad + 3;
+            return estadisticas;
+        }else if(raza == "Humano" && clase == "Tirador") {
+            estadisticas.ataque = estadisticas.ataque + 5;
+            estadisticas.defensa = estadisticas.defensa + 1;
+            estadisticas.mana = estadisticas.mana + 3;
+            estadisticas.ataqueMagico = estadisticas.ataqueMagico + 2;
+            estadisticas.defensaMagica = estadisticas.defensaMagica + 1;
+            estadisticas.velocidad = estadisticas.velocidad + 3;
+            estadisticas.presicion = estadisticas.presicion + 4;
+            estadisticas.inteligencia = estadisticas.inteligencia + 2;
+            estadisticas.agilidad = estadisticas.agilidad + 2;
+            return estadisticas;
+        }else if(raza == "Humano" && clase == "Paladin") {
+            estadisticas.ataque = estadisticas.ataque + 1;
+            estadisticas.defensa = estadisticas.defensa + 4;
+            estadisticas.mana = estadisticas.mana + 4;
+            estadisticas.ataqueMagico = estadisticas.ataqueMagico + 2;
+            estadisticas.defensaMagica = estadisticas.defensaMagica + 4;
+            estadisticas.velocidad = estadisticas.velocidad + 1;
+            estadisticas.presicion = estadisticas.presicion + 2;
+            estadisticas.inteligencia = estadisticas.inteligencia + 4;
+            estadisticas.agilidad = estadisticas.agilidad + 2;
+            return estadisticas;
+        }else if(raza == "Orco" && clase == "Mago") {
+            estadisticas.ataque = estadisticas.ataque + 3;
+            estadisticas.defensa = estadisticas.defensa + 1;
+            estadisticas.mana = estadisticas.mana + 5;
+            estadisticas.ataqueMagico = estadisticas.ataqueMagico + 5;
+            estadisticas.defensaMagica = estadisticas.defensaMagica + 2;
+            estadisticas.velocidad = estadisticas.velocidad + 2;
+            estadisticas.presicion = estadisticas.presicion + 3;
+            estadisticas.inteligencia = estadisticas.inteligencia + 4;
+            estadisticas.agilidad = estadisticas.agilidad + 1;
+            return estadisticas;
+        }
+        else if(raza == "Orco" && clase == "Guerrero") {
+            estadisticas.ataque = estadisticas.ataque + 4;
+            estadisticas.defensa = estadisticas.defensa + 2;
+            estadisticas.mana = estadisticas.mana + 2;
+            estadisticas.ataqueMagico = estadisticas.ataqueMagico + 1;
+            estadisticas.defensaMagica = estadisticas.defensaMagica + 1;
+            estadisticas.velocidad = estadisticas.velocidad + 3;
+            estadisticas.presicion = estadisticas.presicion + 2;
+            estadisticas.inteligencia = estadisticas.inteligencia + 2;
+            estadisticas.agilidad = estadisticas.agilidad + 3;
+            return estadisticas;
+        }else if(raza == "Orco" && clase == "Tirador") {
+            estadisticas.ataque = estadisticas.ataque + 5;
+            estadisticas.defensa = estadisticas.defensa + 1;
+            estadisticas.mana = estadisticas.mana + 3;
+            estadisticas.ataqueMagico = estadisticas.ataqueMagico + 2;
+            estadisticas.defensaMagica = estadisticas.defensaMagica + 1;
+            estadisticas.velocidad = estadisticas.velocidad + 3;
+            estadisticas.presicion = estadisticas.presicion + 4;
+            estadisticas.inteligencia = estadisticas.inteligencia + 2;
+            estadisticas.agilidad = estadisticas.agilidad + 2;
+            return estadisticas;
+        }else if(raza == "Orco" && clase == "Paladin") {
+            estadisticas.ataque = estadisticas.ataque + 1;
+            estadisticas.defensa = estadisticas.defensa + 4;
+            estadisticas.mana = estadisticas.mana + 4;
+            estadisticas.ataqueMagico = estadisticas.ataqueMagico + 2;
+            estadisticas.defensaMagica = estadisticas.defensaMagica + 4;
+            estadisticas.velocidad = estadisticas.velocidad + 1;
+            estadisticas.presicion = estadisticas.presicion + 2;
+            estadisticas.inteligencia = estadisticas.inteligencia + 4;
+            estadisticas.agilidad = estadisticas.agilidad + 2;
+            return estadisticas;
+        }else if(raza == "Elfo" && clase == "Mago") {
+            estadisticas.ataque = estadisticas.ataque + 3;
+            estadisticas.defensa = estadisticas.defensa + 1;
+            estadisticas.mana = estadisticas.mana + 5;
+            estadisticas.ataqueMagico = estadisticas.ataqueMagico + 5;
+            estadisticas.defensaMagica = estadisticas.defensaMagica + 2;
+            estadisticas.velocidad = estadisticas.velocidad + 2;
+            estadisticas.presicion = estadisticas.presicion + 3;
+            estadisticas.inteligencia = estadisticas.inteligencia + 4;
+            estadisticas.agilidad = estadisticas.agilidad + 1;
+            return estadisticas;
+        }
+        else if(raza == "Elfo" && clase == "Guerrero") {
+            estadisticas.ataque = estadisticas.ataque + 4;
+            estadisticas.defensa = estadisticas.defensa + 2;
+            estadisticas.mana = estadisticas.mana + 2;
+            estadisticas.ataqueMagico = estadisticas.ataqueMagico + 1;
+            estadisticas.defensaMagica = estadisticas.defensaMagica + 1;
+            estadisticas.velocidad = estadisticas.velocidad + 3;
+            estadisticas.presicion = estadisticas.presicion + 2;
+            estadisticas.inteligencia = estadisticas.inteligencia + 2;
+            estadisticas.agilidad = estadisticas.agilidad + 3;
+            return estadisticas;
+        }else if(raza == "Elfo" && clase == "Tirador") {
+            estadisticas.ataque = estadisticas.ataque + 5;
+            estadisticas.defensa = estadisticas.defensa + 1;
+            estadisticas.mana = estadisticas.mana + 3;
+            estadisticas.ataqueMagico = estadisticas.ataqueMagico + 2;
+            estadisticas.defensaMagica = estadisticas.defensaMagica + 1;
+            estadisticas.velocidad = estadisticas.velocidad + 3;
+            estadisticas.presicion = estadisticas.presicion + 4;
+            estadisticas.inteligencia = estadisticas.inteligencia + 2;
+            estadisticas.agilidad = estadisticas.agilidad + 2;
+            return estadisticas;
+        }else if(raza == "Elfo" && clase == "Paladin") {
+            estadisticas.ataque = estadisticas.ataque + 1;
+            estadisticas.defensa = estadisticas.defensa + 4;
+            estadisticas.mana = estadisticas.mana + 4;
+            estadisticas.ataqueMagico = estadisticas.ataqueMagico + 2;
+            estadisticas.defensaMagica = estadisticas.defensaMagica + 4;
+            estadisticas.velocidad = estadisticas.velocidad + 1;
+            estadisticas.presicion = estadisticas.presicion + 2;
+            estadisticas.inteligencia = estadisticas.inteligencia + 4;
+            estadisticas.agilidad = estadisticas.agilidad + 2;
+            return estadisticas;
+        }else if(raza == "Enano" && clase == "Mago") {
+            estadisticas.ataque = estadisticas.ataque + 3;
+            estadisticas.defensa = estadisticas.defensa + 1;
+            estadisticas.mana = estadisticas.mana + 5;
+            estadisticas.ataqueMagico = estadisticas.ataqueMagico + 5;
+            estadisticas.defensaMagica = estadisticas.defensaMagica + 2;
+            estadisticas.velocidad = estadisticas.velocidad + 2;
+            estadisticas.presicion = estadisticas.presicion + 3;
+            estadisticas.inteligencia = estadisticas.inteligencia + 4;
+            estadisticas.agilidad = estadisticas.agilidad + 1;
+            return estadisticas;
+        }
+        else if(raza == "Enano" && clase == "Guerrero") {
+            estadisticas.ataque = estadisticas.ataque + 4;
+            estadisticas.defensa = estadisticas.defensa + 2;
+            estadisticas.mana = estadisticas.mana + 2;
+            estadisticas.ataqueMagico = estadisticas.ataqueMagico + 1;
+            estadisticas.defensaMagica = estadisticas.defensaMagica + 1;
+            estadisticas.velocidad = estadisticas.velocidad + 3;
+            estadisticas.presicion = estadisticas.presicion + 2;
+            estadisticas.inteligencia = estadisticas.inteligencia + 2;
+            estadisticas.agilidad = estadisticas.agilidad + 3;
+            return estadisticas;
+        }else if(raza == "Enano" && clase == "Tirador") {
+            estadisticas.ataque = estadisticas.ataque + 5;
+            estadisticas.defensa = estadisticas.defensa + 1;
+            estadisticas.mana = estadisticas.mana + 3;
+            estadisticas.ataqueMagico = estadisticas.ataqueMagico + 2;
+            estadisticas.defensaMagica = estadisticas.defensaMagica + 1;
+            estadisticas.velocidad = estadisticas.velocidad + 3;
+            estadisticas.presicion = estadisticas.presicion + 4;
+            estadisticas.inteligencia = estadisticas.inteligencia + 2;
+            estadisticas.agilidad = estadisticas.agilidad + 2;
+            return estadisticas;
+        }else if(raza == "Enano" && clase == "Paladin") {
+            estadisticas.ataque = estadisticas.ataque + 1;
+            estadisticas.defensa = estadisticas.defensa + 4;
+            estadisticas.mana = estadisticas.mana + 4;
+            estadisticas.ataqueMagico = estadisticas.ataqueMagico + 2;
+            estadisticas.defensaMagica = estadisticas.defensaMagica + 4;
+            estadisticas.velocidad = estadisticas.velocidad + 1;
+            estadisticas.presicion = estadisticas.presicion + 2;
+            estadisticas.inteligencia = estadisticas.inteligencia + 4;
+            estadisticas.agilidad = estadisticas.agilidad + 2;
+            return estadisticas;
+        }
     }
 }
 
-class Estadisticas{
-    constructor(ataque, resistencia, mana, ataqueMagico, resistenciaMagica, velocidad, presicion, inteligencia, rango){
-    this.ataque = ataque;
-    this.resistencia = resistencia;
-    this.mana = mana;
-    this.ataqueMagico = ataqueMagico;
-    this.resistenciaMagica = resistenciaMagica;
-    this.velocidad = velocidad;
-    this.presicion = presicion;
-    this.inteligencia = inteligencia;
-    this.rango = rango;
+class Estadisticas {
+    constructor(){
+        this.ataque = 1;
+        this.defensa = 1;
+        this.mana = 1;
+        this.ataqueMagico = 1;
+        this.defensaMagica = 1;
+        this.velocidad = 1;
+        this.presicion = 1;
+        this.inteligencia = 1;
+        this.agilidad = 1;
     }
 }
+
+
 
 seleccionarRaza();
 
@@ -35,8 +222,8 @@ function ingresarRaza (r){
     if(r){
         let seleccionRaza = validarRaza();
         let seleccionClase = validarClase();
-        razaClase(seleccionRaza, seleccionClase)
-        funcionEstadisticas(seleccionRaza, seleccionClase)
+        razaClase(seleccionRaza, seleccionClase);
+        // mejorarPersonaje(seleccionRaza, seleccionClase)
     }else {
         alert("Es necesario ingresar un tipo de raza")
     }
@@ -93,15 +280,15 @@ function validarClase(){
 
 function razaClase (seleccionRaza, seleccionClase){
     if(seleccionRaza == 1 && seleccionClase== 1 ){
-        const Personaje1 = new Personaje("Humano", "Mago")
-        console.log(Personaje1)
         console.log("Usted eligio ser Humano/Mago a continuacion vera sus estadisticas:")
         console.log("--------------------------")
+        const personaje1 = new Personaje("Humano", "Mago");
+        console.log(personaje1);
     }else if(seleccionRaza == 1 && seleccionClase== 2 ){
-        const Personaje1 = new Personaje("Humano", "Guerrero")
-        console.log(Personaje1)
         console.log("Usted eligio ser Humano/Guerrero a continuacion vera sus estadisticas:")
         console.log("--------------------------")
+        const personaje1 = new Personaje("Humano", "Guerrero");
+        console.log(personaje1);
     }else if(seleccionRaza == 1 && seleccionClase== 3 ){
         const Personaje1 = new Personaje("Humano", "Tirador")
         console.log(Personaje1)
@@ -174,60 +361,6 @@ function razaClase (seleccionRaza, seleccionClase){
         console.log("--------------------------")
     }
 }
-
-
-function funcionEstadisticas(seleccionRaza, seleccionClase){
-    if(seleccionRaza == 1 && seleccionClase== 1 ){
-    const Estadisticas1 = new Estadisticas(60, 50, 100, 90, 50, 55, 60, 70, 4)
-    console.log(Estadisticas1)
-    }else if(seleccionRaza == 1 && seleccionClase== 2 ){
-        const Estadisticas1 = new Estadisticas(80, 60, 50, 40, 60, 75, 65, 60, 1)
-        console.log(Estadisticas1)
-    }else if(seleccionRaza == 1 && seleccionClase== 3 ){
-        const Estadisticas1 = new Estadisticas(60, 50, 100, 90, 50, 55, 60, 70, 5)
-        console.log(Estadisticas1)
-    }else if(seleccionRaza == 1 && seleccionClase== 4 ){
-        const Estadisticas1 = new Estadisticas(40, 80, 80, 70, 90, 40, 50, 80, 1)
-        console.log(Estadisticas1)
-    }else if(seleccionRaza == 2 && seleccionClase== 1 ){
-        const Estadisticas1 = new Estadisticas(60, 50, 100, 90, 50, 55, 60, 70, 4)
-        console.log(Estadisticas1)
-    }else if(seleccionRaza == 2 && seleccionClase== 2 ){
-        const Estadisticas1 = new Estadisticas(80, 60, 50, 40, 60, 75, 65, 60, 1)
-        console.log(Estadisticas1)
-    }else if(seleccionRaza == 2 && seleccionClase== 3 ){
-        const Estadisticas1 = new Estadisticas(90, 30, 70, 30, 30, 90, 95, 65, 5)
-        console.log(Estadisticas1)
-    }else if(seleccionRaza == 2 && seleccionClase== 4 ){
-        const Estadisticas1 = new Estadisticas(40, 80, 80, 70, 90, 40, 50, 80, 1)
-        console.log(Estadisticas1)
-    }else if(seleccionRaza == 3 && seleccionClase== 1 ){
-        const Estadisticas1 = new Estadisticas(60, 50, 100, 90, 50, 55, 60, 70, 4)
-        console.log(Estadisticas1)
-    }else if(seleccionRaza == 3 && seleccionClase== 2 ){
-        const Estadisticas1 = new Estadisticas(80, 60, 50, 40, 60, 75, 65, 60, 1)
-        console.log(Estadisticas1)
-    }else if(seleccionRaza == 3 && seleccionClase== 3 ){
-        const Estadisticas1 = new Estadisticas(90, 30, 70, 30, 30, 90, 95, 65, 5)
-        console.log(Estadisticas1)
-    }else if(seleccionRaza == 3 && seleccionClase== 4 ){
-        const Estadisticas1 = new Estadisticas(40, 80, 80, 70, 90, 40, 50, 80, 1)
-        console.log(Estadisticas1)
-    }else if(seleccionRaza == 4 && seleccionClase== 1 ){
-        const Estadisticas1 = new Estadisticas(60, 50, 100, 90, 50, 55, 60, 70, 4)
-        console.log(Estadisticas1)
-    }else if(seleccionRaza == 4 && seleccionClase== 2 ){
-        const Estadisticas1 = new Estadisticas(80, 60, 50, 40, 60, 75, 65, 60, 1)
-        console.log(Estadisticas1)
-    }else if(seleccionRaza == 4 && seleccionClase== 3 ){
-        const Estadisticas1 = new Estadisticas(90, 30, 70, 30, 30, 90, 95, 65, 5)
-        console.log(Estadisticas1)
-    }else if(seleccionRaza == 4 && seleccionClase== 4 ){
-        const Estadisticas1 = new Estadisticas(40, 80, 80, 70, 90, 40, 50, 80, 1)
-        console.log(Estadisticas1)
-    }
-}
-
 
 const finalizar = () => {return "Ya se ha seleccionado su personaje"}
 
