@@ -171,13 +171,16 @@ class Estadistica{
     }
 }
 
-const personaje = new Estadistica (80, 100)
-console.log(personaje)
+const personajebase = new Estadistica (80, 100)
+console.log(personajebase)
+
+mago = () =>{ return 150}
+
 
 
 function mejorarPersonaje(){
 
-    nuevaestadistica = 80 +  20;
+    nuevaestadistica = personajebase.velocidad 
     return nuevaestadistica;
 
 }
