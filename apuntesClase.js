@@ -636,16 +636,102 @@
 // const cadena = "Dabale arroz a la zorra el abad"
 // console.log(cadena.length)
 // let saludo = "Hola "
-// let emoji = "😊" ////// en el teclado para emojis se usa la tecla windows + .
+// let emoji = "" ////// en el teclado para emojis se usa la tecla windows + .
 // console.log(emoji.length)
 // console.log(saludo.length)
 
 
 
 
-const vacios = [{},{},{},{}]
-console.log(vacios)
+// const vacios = [{},{},{},{}]
+// console.log(vacios)
 
-const mascota = [{nombre: "homero", edad:15},{nombre: "felipe", edad:9},{},{}]
-console.log(mascota)
+// const mascota = [{nombre: "homero", edad:15},{nombre: "felipe", edad:9},{},{}]
+// console.log(mascota)
 
+/////////////// clase 7 //////////////////
+
+
+
+// const meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio"]
+
+// meses.forEach ((mes) =>{
+//     if(mes ==+ "Enero"){
+//         console.log("Si existe")
+//     }
+// })
+
+// const resultado = meses.includes('Enero');
+// // console.log(resultado)
+
+const productos = [
+    {nombre: "Banana", precio: 50},
+    {nombre: "Naranja", precio: 30},
+    {nombre: "Pera", precio: 100},
+    {nombre: "Frutilla", precio: 20},
+    {nombre: "Frutilla", precio: 30},
+    {nombre: "Frutilla", precio: 40},
+    {nombre: "Frutilla", precio: 60}
+]
+
+// const existe = productos.includes("Pera")
+// const existe = productos.some(item => item .nombre = "Pera");
+// const e = productos.some(item => item .precio = 30);
+// // console.log(existe)
+// // console.log(e)
+
+// meses.forEach ((mes, index) =>{
+//     if(mes === "Enero"){
+//         console.log(`Encontraste en el indice ${index}`)
+//     }
+// })
+
+// const indice = meses.findIndex(mes => mes==="Febrero")
+// console.log(`Encontraste en el indice ${indice}`)
+
+
+// let total = 0
+// productos.forEach ((producto) =>{
+//     total+= producto.precio
+//     console.log(`La suma de todos los productos es ${total}`)
+// })
+
+// let carrito = productos.reduce((total, item)=> total += item.precio, 0)
+// console.log(carrito)
+
+// let carrito = productos.reduce((t, producto)=> t += producto.precio, 100)//// calcular el total del carrito
+// console.log(carrito)
+
+// let res = productos.filter( item => item.precio > 30)
+// console.log(res)
+
+// let res1 = productos.filter( item => item.nombre === "Frutilla") ////filtrar
+// console.log(res1)
+
+// let res2 = productos.find( item => item.nombre === "Frutilla") ///// buscar
+// console.log(res2)
+
+// let res3 = productos.every( item => item.precio < 200)
+// console.log(res3)
+
+// let productosTax = productos.map( item => item.precio + (item.precio*0.5))
+// console.log(productosTax)
+
+
+// let numeroMayoresA100 = [100, 200, 300, 10, 70, 400, 500, 5]
+
+// numeroMayoresA100.sort((a, b)=> {
+//     if (a<= 100){
+//         return 1
+//     }
+//     return -1
+// })
+
+// console.log (numeroMayoresA100 )
+
+let a = new Date();
+console.log(a)
+console.log(typeof a)
+
+let anio = a.getFullYear()
+console.log(anio)
