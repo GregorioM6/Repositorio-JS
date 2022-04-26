@@ -162,3 +162,63 @@ function resultadoClase1(){
 // // function salir(){
 // //     alert("Fin de la operacion")
 // // }
+
+
+class Estadistica{
+    constructor(ataque , velocidad){
+        this.ataque = ataque;
+        this.velocidad = velocidad
+    }
+}
+
+const personajebase = new Estadistica (80, 100)
+console.log(personajebase)
+
+mago = () =>{ return 150}
+
+
+
+function mejorarPersonaje(){
+
+    nuevaestadistica = personajebase.velocidad 
+    return nuevaestadistica;
+
+}
+const personaje2 = new Estadistica(mejorarPersonaje(), 50)
+
+
+console.log(personaje2)
+
+
+class Personaje{
+
+    constructor( raza, clase ) {
+        this.raza = raza;
+        this.clase = clase;
+        this.estadisticas = this.calcularEstadisticas(this.raza, this.clase);
+    }
+
+    calcularEstadisticas(raza, clase){
+        let estadisticas = new Estadisticas();
+
+        if(raza == "Orco") {
+            estadisticas.fuerza = estadisticas.fuerza + 2;
+        }
+
+        return estadisticas;
+
+    }
+
+}
+
+class Estadisticas {
+    constructor(){
+        this.fuerza = 1;
+        this.agilidad = 1;
+        this.inteligencia = 1;
+    }
+}
+
+const personaje1 = new Personaje("Humano", "Arquero");
+
+console.log(personaje1);

@@ -398,7 +398,10 @@
 // console.log(aprender4())
 // console.log(aprender5())
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> e17b2626478ce2502d92a557238c957ad13ba5de
 //////////////////////////// clase 5 ////////////////////////////////////
 
 //////////// objetos
@@ -460,6 +463,7 @@
 // //     precio: 23123,
 // //     disponible: true
 // // }
+<<<<<<< HEAD
 
 // let p1= new Producto("CocaCola", 200, true)
 // let p2= new Producto("Sprite", 199, true)
@@ -735,3 +739,120 @@ console.log(typeof a)
 
 let anio = a.getFullYear()
 console.log(anio)
+=======
+
+// let p1= new Producto("CocaCola", 200, true)
+// let p2= new Producto("Sprite", 199, true)
+// let p3= new Producto("Pepsi", 150, false)
+// let p4= new Producto("Locion para afeitarse", 500, true)
+
+
+// console.log(p1)
+// console.log(p2)
+// console.log(p3)
+// console.log(p4)
+
+// function Mascotas(){
+    
+// }
+// function Superheroes(n, a, p){ ////// forma correcta para aplicar
+//     this.nombre = n;
+//     this.alterego = a;
+//     this.poder = p;
+// }
+
+
+// // let batman ={ ////// forma incorrecta para aplicar dado que se pierde tiempo
+// //     nombre: "Bruno Dias",
+// //     alterego: "batman",
+// //     superpoder: "Cinturon y plata"
+// // }
+
+// // let Superman ={
+// //     nombre: "Clark Kent",
+// //     alterego: "Superman",
+// //     superpoder: "Super fuerza"
+// // }
+
+// let batman= new Superheroes("Bruno Diaz", "Batman", "Cinturon y plata")
+// let superman= new Superheroes("Clark Kent", "Superman", "Superfuerza")
+
+// console.log(batman)
+// console.log(superman)
+
+
+////////////////////// otro ejemplo
+
+// const producto ={
+//     nombre: "TV",
+//     precio: 40000,
+//     disponible: true,
+//     mostrarInfo: function(){
+//         return `El producto: ${this.nombre} tiene un precio de ${this.precio} y su disponibilidad es ${this.disponible}`
+//     }
+// }
+
+// ///// visualizar si dentro del objeto literal existe un item y que responda verdadero o falso:
+// console.log("img" in producto) // falso
+// console.log("disponible" in producto) // verdadero
+
+// console.log(producto)
+// console.log(producto.nombre)
+// console.log(producto.precio)
+// console.log(producto.disponible)
+// let informacion = producto.mostrarInfo()
+// console.log(informacion)
+
+// function saludar(){
+//     console.log("Hola")
+// }
+
+// saludar()
+// producto.mostrarInfo()
+
+
+/////// propiedades de la ventana del navegador
+// console.log(this)
+// console.log(window)
+
+
+// console.log(producto)
+// console.dir(producto)
+
+// for(let prop in window){
+//     console.log(prop)
+// }
+
+// for(let prop in window.document.body){
+//     console.log(prop.children)
+// }
+
+/////////////
+
+// for(let item in producto){
+//     console.log(item)
+// }
+
+
+/////////////////////////////////// otro ejemplo
+
+// class Producto{
+//     constructor(n, p, d){
+//     this.nombre = n;
+//     this.precio = p;
+//     }
+//     disponible = true;
+//     cantidad=20
+
+//     mostrarInfor=()=>{
+//         return "El producto"
+//     }
+// }
+
+// const p1 = new Producto("Helado", 200)
+
+// console.dir(p1)
+
+// console.log(p1.nombre)
+// console.log(p1.mostrarInfor())
+>>>>>>> e17b2626478ce2502d92a557238c957ad13ba5de
