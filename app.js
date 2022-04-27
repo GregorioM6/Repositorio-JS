@@ -152,8 +152,7 @@ class Personaje{
             estadisticas.inteligencia = estadisticas.inteligencia + 4;
             estadisticas.agilidad = estadisticas.agilidad + 1;
             return estadisticas;
-        }
-        else if(raza == "Enano" && clase == "Guerrero") {
+        }else if(raza == "Enano" && clase == "Guerrero") {
             estadisticas.ataque = estadisticas.ataque + 4;
             estadisticas.defensa = estadisticas.defensa + 2;
             estadisticas.mana = estadisticas.mana + 2;
@@ -362,8 +361,13 @@ function razaClase (seleccionRaza, seleccionClase){
     }
 }
 
-const finalizar = () => {return "Ya se ha seleccionado su personaje"}
-
-alert(finalizar())
-
-console.log(finalizar())
+function finalizar (){
+    let finProceso = Number(prompt("Desea crear un nuevo personaje:\n 1:Si\n 2:No"))
+    console.log(finProceso)
+        if (finProceso == 1){
+            ingresarRaza()
+        } else {
+            console.log(finProceso)
+        return "Ya se ha seleccionado su personaje";
+        }
+    }
