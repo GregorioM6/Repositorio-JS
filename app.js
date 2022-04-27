@@ -222,7 +222,7 @@ function ingresarRaza (r){
         let seleccionRaza = validarRaza();
         let seleccionClase = validarClase();
         razaClase(seleccionRaza, seleccionClase);
-        // mejorarPersonaje(seleccionRaza, seleccionClase)
+        finalizar ();
     }else {
         alert("Es necesario ingresar un tipo de raza")
     }
@@ -277,97 +277,126 @@ function validarClase(){
     }
 }
 
+
 function razaClase (seleccionRaza, seleccionClase){
+    const listaPersonajes =[]
     if(seleccionRaza == 1 && seleccionClase== 1 ){
         console.log("Usted eligio ser Humano/Mago a continuacion vera sus estadisticas:")
         console.log("--------------------------")
-        const personaje1 = new Personaje("Humano", "Mago");
-        console.log(personaje1);
+        const Personaje1 = new Personaje("Humano", "Mago");
+        listaPersonajes.push(Personaje1);
+        console.log(Personaje1);
     }else if(seleccionRaza == 1 && seleccionClase== 2 ){
         console.log("Usted eligio ser Humano/Guerrero a continuacion vera sus estadisticas:")
         console.log("--------------------------")
-        const personaje1 = new Personaje("Humano", "Guerrero");
-        console.log(personaje1);
+        const Personaje1 = new Personaje("Humano", "Guerrero");
+        listaPersonajes.push(Personaje1);
+        console.log(Personaje1);
     }else if(seleccionRaza == 1 && seleccionClase== 3 ){
-        const Personaje1 = new Personaje("Humano", "Tirador")
-        console.log(Personaje1)
+        const Personaje1 = new Personaje("Humano", "Tirador");
+        listaPersonajes.push(Personaje1);
+        console.log(Personaje1);
         console.log("Usted eligio ser Humano/Tirador a continuacion vera sus estadisticas:")
         console.log("--------------------------")
     }else if(seleccionRaza == 1 && seleccionClase== 4 ){
-        const Personaje1 = new Personaje("Humano", "Paladin")
-        console.log(Personaje1)
+        const Personaje1 = new Personaje("Humano", "Paladin");
+        listaPersonajes.push(Personaje1);
+        console.log(Personaje1);
         console.log("Usted eligio ser Humano/Paladin a continuacion vera sus estadisticas:")
         console.log("--------------------------")
     }else if(seleccionRaza == 2 && seleccionClase== 1 ){
-        const Personaje1 = new Personaje("Orco", "Mago")
+        const Personaje1 = new Personaje("Orco", "Mago");
+        listaPersonajes.push(Personaje1);
         console.log(Personaje1)
         console.log("Usted eligio ser Orco/Mago a continuacion vera sus estadisticas:")
         console.log("--------------------------")
     }else if(seleccionRaza == 2 && seleccionClase== 2 ){
-        const Personaje1 = new Personaje("Orco", "Guerrero")
+        const Personaje1 = new Personaje("Orco", "Guerrero");
+        listaPersonajes.push(Personaje1);
         console.log(Personaje1)
         console.log("Usted eligio ser Orco/Guerrero a continuacion vera sus estadisticas:")
         console.log("--------------------------")
     }else if(seleccionRaza == 2 && seleccionClase== 3 ){
-        const Personaje1 = new Personaje("Orco", "Tirador")
+        const Personaje1 = new Personaje("Orco", "Tirador");
+        listaPersonajes.push(Personaje1);
         console.log(Personaje1)
         console.log("Usted eligio ser Orco/Tirador a continuacion vera sus estadisticas:")
         console.log("--------------------------")
     }else if(seleccionRaza == 2 && seleccionClase== 4 ){
-        const Personaje1 = new Personaje("Orco", "Paladin")
+        const Personaje1 = new Personaje("Orco", "Paladin");
+        listaPersonajes.push(Personaje1);
         console.log(Personaje1)
         console.log("Usted eligio ser Orco/Paladin a continuacion vera sus estadisticas:")
         console.log("--------------------------")
     }else if(seleccionRaza == 3 && seleccionClase== 1 ){
-        const Personaje1 = new Personaje("Elfo", "Mago")
+        const Personaje1 = new Personaje("Elfo", "Mago");
+        listaPersonajes.push(Personaje1);
         console.log(Personaje1)
         console.log("Usted eligio ser Elfo/Mago a continuacion vera sus estadisticas:")
         console.log("--------------------------")
     }else if(seleccionRaza == 3 && seleccionClase== 2 ){
-        const Personaje1 = new Personaje("Elfo", "Guerrero")
+        const Personaje1 = new Personaje("Elfo", "Guerrero");
+        listaPersonajes.push(Personaje1);
         console.log(Personaje1)
         console.log("Usted eligio ser Elfo/Guerrero a continuacion vera sus estadisticas:")
         console.log("--------------------------")
     }else if(seleccionRaza == 3 && seleccionClase== 3 ){
-        const Personaje1 = new Personaje("Elfo", "Tirador")
+        const Personaje1 = new Personaje("Elfo", "Tirador");
+        listaPersonajes.push(Personaje1);
         console.log(Personaje1)
         console.log("Usted eligio ser Elfo/Tirador a continuacion vera sus estadisticas:")
         console.log("--------------------------")
     }else if(seleccionRaza == 3 && seleccionClase== 4 ){
-        const Personaje1 = new Personaje("Elfo", "Paladin")
+        const Personaje1 = new Personaje("Elfo", "Paladin");
+        listaPersonajes.push(Personaje1);
         console.log(Personaje1)
         console.log("Usted eligio ser Elfo/Paladin a continuacion vera sus estadisticas:")
         console.log("--------------------------")
     }else if(seleccionRaza == 4 && seleccionClase== 1 ){
-        const Personaje1 = new Personaje("Enano", "Mago")
+        const Personaje1 = new Personaje("Enano", "Mago");
+        listaPersonajes.push(Personaje1);
         console.log(Personaje1)
         console.log("Usted eligio ser Enano/Mago a continuacion vera sus estadisticas:")
         console.log("--------------------------")
     }else if(seleccionRaza == 4 && seleccionClase== 2 ){
-        const Personaje1 = new Personaje("Enano", "Guerrero")
+        const Personaje1 = new Personaje("Enano", "Guerrero");
+        listaPersonajes.push(Personaje1);
         console.log(Personaje1)
         console.log("Usted eligio ser Enano/Guerrero a continuacion vera sus estadisticas:")
         console.log("--------------------------")
     }else if(seleccionRaza == 4 && seleccionClase== 3 ){
-        const Personaje1 = new Personaje("Enano", "Tirador")
+        const Personaje1 = new Personaje("Enano", "Tirador");
+        listaPersonajes.push(Personaje1);
         console.log(Personaje1)
         console.log("Usted eligio ser Enano/Tirador a continuacion vera sus estadisticas:")
         console.log("--------------------------")
     }else if(seleccionRaza == 4 && seleccionClase== 4 ){
-        const Personaje1 = new Personaje("Enano", "Paladin")
+        const Personaje1 = new Personaje("Enano", "Paladin");
+        listaPersonajes.push(Personaje1);
         console.log(Personaje1)
         console.log("Usted eligio ser Enano/Paladin a continuacion vera sus estadisticas:")
         console.log("--------------------------")
     }
+    console.log(listaPersonajes);
 }
 
+
+
+
 function finalizar (){
-    let finProceso = Number(prompt("Desea crear un nuevo personaje:\n 1:Si\n 2:No"))
-    console.log(finProceso)
-        if (finProceso == 1){
-            ingresarRaza()
+    let seleccionFinalizar = prompt("Desea crear un nuevo personaje:\n 1:Si\n 2:No")
+        if (seleccionFinalizar === "1"){
+            seleccionarRaza()
         } else {
-            console.log(finProceso)
-        return "Ya se ha seleccionado su personaje";
+            console.log("Ya se ha seleccionado su personaje")
         }
     }
+
+
+
+
+// const finalizar = () => {return "Ya se ha seleccionado su personaje"}
+
+// alert(finalizar())
+
+// console.log(finalizar())
