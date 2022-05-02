@@ -209,11 +209,6 @@ seleccionarRaza();
 
 function seleccionarRaza(){
     let seleccion = confirm ("Ingrese su raza para comenzar el juego")
-    console.log("1: Humano")
-    console.log("2: Orco")
-    console.log("3: Elfo")
-    console.log("4: Enano")
-    console.log("--------------------------")
     ingresarRaza (seleccion)
 }
 
@@ -222,7 +217,7 @@ function ingresarRaza (r){
         let seleccionRaza = validarRaza();
         let seleccionClase = validarClase();
         razaClase(seleccionRaza, seleccionClase);
-        finalizar ();
+        finalizarSeleccion ();
         array(seleccionRaza, seleccionClase);
     }else {
         alert("Es necesario ingresar un tipo de raza")
@@ -235,8 +230,7 @@ function validarRaza (){
     let tipoRaza = Number(prompt("Ingresar raza:\n 1:Humano\n 2:Orco\n 3:Elfo\n 4:Enano"))
     while(tipoRaza >= 5 || tipoRaza <= 0){
     tipoRaza = Number(prompt("Ingresar raza:\n 1:Humano\n 2:Orco\n 3:Elfo\n 4:Enano"))
-    }
-        if(tipoRaza == "1"){
+    }if(tipoRaza == "1"){
             console.log("Usted selecciono: Humano")
             console.log("--------------------------")
             return 1;
@@ -388,7 +382,7 @@ function array(seleccionRaza, seleccionClase){
 
 console.log(listaPersonajes);
 
-function finalizar (){
+function finalizarSeleccion (){
     let seleccionFinalizar = prompt("Desea crear un nuevo personaje:\n 1:Si\n 2:No")
         if (seleccionFinalizar === "1"){
             seleccionarRaza();
@@ -396,3 +390,23 @@ function finalizar (){
             console.log("Ya se ha seleccionado su personaje")
         }
     }
+
+function pelea(){
+    alert("A continuacion comenzaremos la batalla")
+    let pelear = prompt("Elija el nivel de dificultad de la batalla:\n 1:Facil\n 2:Normal\n 3:Dificil")
+    if(pelear == "1"){
+        console.log("Usted eligio pelear contra la maquina en facil")
+        console.log("--------------------------")
+        return 1;
+    }else if (pelear == "2"){
+        console.log("Usted eligio pelear contra la maquina en Normal")
+        console.log("--------------------------")
+        return 2;
+    }else if (pelear == "3"){
+        console.log("Usted eligio pelear contra la maquina en Dificil")
+        console.log("--------------------------")
+        return 3;
+    }
+}
+
+pelea()
