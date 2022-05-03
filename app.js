@@ -203,7 +203,54 @@ class Estadisticas {
     }
 }
 
+
+class Bot{
+    constructor( nombre) {
+        this.nombre = nombre;
+        this.estadisticas = this.calcularEstadisticas(this.nombre);
+    }
+    calcularEstadisticas(nombre){
+        let estadisticas = new Estadisticas();
+        if(nombre == "Bot1") {
+            estadisticas.ataque = estadisticas.ataque + 1;
+            estadisticas.defensa = estadisticas.defensa + 1;
+            estadisticas.mana = estadisticas.mana + 1;
+            estadisticas.ataqueMagico = estadisticas.ataqueMagico + 1;
+            estadisticas.defensaMagica = estadisticas.defensaMagica + 1;
+            estadisticas.velocidad = estadisticas.velocidad + 1;
+            estadisticas.presicion = estadisticas.presicion + 1;
+            estadisticas.inteligencia = estadisticas.inteligencia + 1;
+            estadisticas.agilidad = estadisticas.agilidad + 1;
+            return estadisticas;
+        }
+        else if(nombre == "Bot2") {
+            estadisticas.ataque = estadisticas.ataque + 2;
+            estadisticas.defensa = estadisticas.defensa + 2;
+            estadisticas.mana = estadisticas.mana + 2;
+            estadisticas.ataqueMagico = estadisticas.ataqueMagico + 2;
+            estadisticas.defensaMagica = estadisticas.defensaMagica + 2;
+            estadisticas.velocidad = estadisticas.velocidad + 2;
+            estadisticas.presicion = estadisticas.presicion + 2;
+            estadisticas.inteligencia = estadisticas.inteligencia + 2;
+            estadisticas.agilidad = estadisticas.agilidad + 2;
+            return estadisticas;
+        }else if(nombre == "Bot3") {
+            estadisticas.ataque = estadisticas.ataque + 6;
+            estadisticas.defensa = estadisticas.defensa + 6;
+            estadisticas.mana = estadisticas.mana + 6;
+            estadisticas.ataqueMagico = estadisticas.ataqueMagico + 6;
+            estadisticas.defensaMagica = estadisticas.defensaMagica + 6;
+            estadisticas.velocidad = estadisticas.velocidad + 6;
+            estadisticas.presicion = estadisticas.presicion + 6;
+            estadisticas.inteligencia = estadisticas.inteligencia + 6;
+            estadisticas.agilidad = estadisticas.agilidad + 6;
+            return estadisticas;
+        }
+    }
+}
+
 const listaPersonajes =[];
+const listaBot =[];
 
 seleccionarRaza();
 
@@ -218,7 +265,10 @@ function ingresarRaza (r){
         let seleccionClase = validarClase();
         razaClase(seleccionRaza, seleccionClase);
         finalizarSeleccion ();
-        array(seleccionRaza, seleccionClase);
+        arrayPersonaje(seleccionRaza, seleccionClase);
+        let seleccionRival = seleccionBot()
+        selecRival(seleccionRival)
+        arrayBot(seleccionRival)
     }else {
         alert("Es necesario ingresar un tipo de raza")
     }
@@ -375,7 +425,7 @@ function razaClase (seleccionRaza, seleccionClase){
     
 }
 
-function array(seleccionRaza, seleccionClase){
+function arrayPersonaje(seleccionRaza, seleccionClase){
     const Personaje = razaClase(seleccionRaza, seleccionClase);
     listaPersonajes.push(Personaje);
 }
@@ -391,22 +441,88 @@ function finalizarSeleccion (){
         }
     }
 
-function pelea(){
-    alert("A continuacion comenzaremos la batalla")
-    let pelear = prompt("Elija el nivel de dificultad de la batalla:\n 1:Facil\n 2:Normal\n 3:Dificil")
-    if(pelear == "1"){
+
+    
+function seleccionBot(){
+    alert("A continuacion comenzaremos la batalla");
+    let seleccionRival = Number(prompt("Elija el nivel de dificultad de la batalla:\n 1:Facil\n 2:Normal\n 3:Dificil"))
+    while(seleccionRival >= 4 || seleccionRival <= 0){
+        seleccionRival = Number(prompt("Elija el nivel de dificultad de la batalla:\n 1:Facil\n 2:Normal\n 3:Dificil"))
+    }if(seleccionRival == "1"){
         console.log("Usted eligio pelear contra la maquina en facil")
         console.log("--------------------------")
         return 1;
-    }else if (pelear == "2"){
+    }else if (seleccionRival == "2"){
         console.log("Usted eligio pelear contra la maquina en Normal")
         console.log("--------------------------")
         return 2;
-    }else if (pelear == "3"){
+    }else if (seleccionRival == "3"){
         console.log("Usted eligio pelear contra la maquina en Dificil")
         console.log("--------------------------")
         return 3;
     }
 }
 
-pelea()
+function selecRival (seleccionRival){
+    if(seleccionRival == 1 ){
+        const Bot1 = new Bot("Bot1");
+        console.log(Bot1);
+        console.log("Usted eligio Bot1")
+        console.log("--------------------------")
+        return Bot1;
+    }else if(seleccionRival == 2 ){
+        const Bot1 = new Bot("Bot2");
+        console.log(Bot1);
+        console.log("Usted eligio Bot2")
+        console.log("--------------------------")
+        return Bot1;
+    }else if(seleccionRival == 3 ){
+        const Bot1 = new Bot("Bot3");
+        console.log(Bot1);
+        console.log("Usted eligio Bot3")
+        console.log("--------------------------")
+        return Bot1;
+    }
+}
+
+function arrayBot(seleccionRival){
+    const Bot = selecRival(seleccionRival);
+    listaBot.push(Bot);
+}
+console.log(listaBot);
+
+const resta= [];
+
+
+function restar(){
+    const ataque = listaPersonajes[0].estadisticas.ataque
+    const defensa = listaBot[0].estadisticas.defensa
+    console.log("--------------------------");
+    console.log(listaPersonajes);
+    console.log("Ataque", ataque);
+    console.log("Defensa",defensa);
+    if(ataque >= defensa){
+        alert("Derrotaste a tu enemigo, subiste de nivel");
+        alert("Nivel 2");
+        console.log("Nivel 2");
+        nivel();
+    }else(
+        alert("Tu enemigo te ha derrotado.")
+    )
+}
+
+restar();
+
+function nivel(){
+    listaPersonajes[0].estadisticas.ataque = listaPersonajes[0].estadisticas.ataque + 2;
+    listaPersonajes[0].estadisticas.defensa = listaPersonajes[0].estadisticas.defensa + 2;
+    listaPersonajes[0].estadisticas.mana = listaPersonajes[0].estadisticas.mana + 2;
+    listaPersonajes[0].estadisticas.ataqueMagico = listaPersonajes[0].estadisticas.ataqueMagico + 2;
+    listaPersonajes[0].estadisticas.defensaMagica = listaPersonajes[0].estadisticas.defensaMagica + 2;
+    listaPersonajes[0].estadisticas.velocidad = listaPersonajes[0].estadisticas.velocidad + 2;
+    listaPersonajes[0].estadisticas.presicion = listaPersonajes[0].estadisticas.presicion + 2;
+    listaPersonajes[0].estadisticas.inteligencia = listaPersonajes[0].estadisticas.inteligencia + 2;
+    listaPersonajes[0].estadisticas.agilidad = listaPersonajes[0].estadisticas.agilidad + 2;
+    console.log("Subiste de nivel, aqui encontraras las nuevas estadisticas:", listaPersonajes[0]);
+}
+
