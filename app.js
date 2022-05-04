@@ -1,5 +1,5 @@
 class Personaje{
-    constructor( raza, clase) {
+    constructor( raza, clase, estadisticas) {
         this.raza = raza;
         this.clase = clase;
         this.estadisticas = this.calcularEstadisticas(this.raza, this.clase);
@@ -422,7 +422,6 @@ function razaClase (seleccionRaza, seleccionClase){
         console.log("--------------------------")
         return Personaje1;
     }
-    
 }
 
 function arrayPersonaje(seleccionRaza, seleccionClase){
@@ -527,4 +526,21 @@ function nivel(){
 }
 
 
-
+console.log("Acaaaaaaaaaaaa", listaPersonajes)
+for (const personaje of listaPersonajes) {
+    let contenedor = document.createElement("div");
+    contenedor.innerHTML = `<h1> Raza: ${personaje.raza}</h1>
+                            <p>  Clase: ${personaje.clase}</p>
+                            <ul> Estadisticas:
+                                <li> Ataque: ${personaje.estadisticas.ataque}</li>
+                                <li> Defensa: ${personaje.estadisticas.defensa}</li>
+                                <li> Mana: ${personaje.estadisticas.mana}</li>
+                                <li> Ataque Magico: ${personaje.estadisticas.ataqueMagico}</li>
+                                <li> Defensa Magica: ${personaje.estadisticas.defensaMagica}</li>
+                                <li> Velocidad: ${personaje.estadisticas.velocidad}</li>
+                                <li> Presicion: ${personaje.estadisticas.presicion}</li>
+                                <li> Inteligencia: ${personaje.estadisticas.inteligencia}</li>
+                                <li> Agilidad: ${personaje.estadisticas.agilidad}</li>
+                            </ul>`;
+    document.body.appendChild(contenedor);
+}
