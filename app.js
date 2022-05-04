@@ -526,3 +526,5 @@ function nivel(){
     console.log("Subiste de nivel, aqui encontraras las nuevas estadisticas:", listaPersonajes[0]);
 }
 
+
+
