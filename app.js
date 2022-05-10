@@ -275,7 +275,6 @@ function ingresarRaza (r){
     return 1;
 }
 
-
 function validarRaza (){
     let tipoRaza = Number(prompt("Ingresar raza:\n 1:Humano\n 2:Orco\n 3:Elfo\n 4:Enano"))
     while(tipoRaza >= 5 || tipoRaza <= 0){
@@ -525,13 +524,13 @@ function nivel(){
     console.log("Subiste de nivel, aqui encontraras las nuevas estadisticas:", listaPersonajes[0]);
 }
 
+console.log(listaPersonajes)
 
-console.log("Acaaaaaaaaaaaa", listaPersonajes)
 for (const personaje of listaPersonajes) {
     let contenedor = document.createElement("div");
-    contenedor.innerHTML = `<h1> Raza: ${personaje.raza}</h1>
-                            <p>  Clase: ${personaje.clase}</p>
-                            <ul> Estadisticas:
+    contenedor.innerHTML = `<h1 class= "container"> Raza: ${personaje.raza}</h1>
+                            <p class= "container">  Clase: ${personaje.clase}</p>
+                            <ul class= "container"> Estadisticas:
                                 <li> Ataque: ${personaje.estadisticas.ataque}</li>
                                 <li> Defensa: ${personaje.estadisticas.defensa}</li>
                                 <li> Mana: ${personaje.estadisticas.mana}</li>
@@ -543,4 +542,30 @@ for (const personaje of listaPersonajes) {
                                 <li> Agilidad: ${personaje.estadisticas.agilidad}</li>
                             </ul>`;
     document.body.appendChild(contenedor);
+}
+
+
+var nombreRegion = document.getElementById('region');
+nombreRegion.addEventListener('keyup', function(e) {
+    var keycode = e.keycode || e.which;
+    if (keycode == 13) {
+        alert("Selecciono la region con Enter!");
+    }
+});
+
+function seleccionSi (){
+    text = "El personaje va a pelear";
+    console.log(text)
+}
+
+function nombreUsuario() {
+    var user = document.getElementById("personaje").value;
+    text = "El nombre de usuario es '" + user;
+    console.log(text)
+    alert(text)
+}
+
+function seleccionNo(){
+    text = "El personaje no va a pelear";
+    console.log(text)
 }
