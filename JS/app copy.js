@@ -252,13 +252,7 @@ class Bot{
 const listaPersonajes =[];
 const listaBot =[];
 
-function enviar(){
-    let nombre = document.getElementById("personaje").value
-    let raza = document.getElementById("raza").value
-    let clase = document.getElementById("clase").value
-    console.log(raza)
-    console.log(nombre)
-    console.log(clase)
+
 
 
 function seleccionarRaza(){
@@ -266,28 +260,28 @@ function seleccionarRaza(){
     ingresarRaza (seleccion)
 }
 
-
 seleccionarRaza();
 
 function ingresarRaza (r){
-        if(r){
-            let seleccionRaza = validarRaza(raza);
-            let seleccionClase = validarClase(clase);
-            razaClase(seleccionRaza, seleccionClase);
-            //finalizarSeleccion ();
-            arrayPersonaje(seleccionRaza, seleccionClase);
+    if(r){
+        let seleccionRaza = validarRaza();
+        let seleccionClase = validarClase();
+        razaClase(seleccionRaza, seleccionClase);
+        finalizarSeleccion ();
+        arrayPersonaje(seleccionRaza, seleccionClase);
+        let seleccionRival = seleccionBot()
+        selecRival(seleccionRival)
+        arrayBot(seleccionRival)
     }else {
         alert("Es necesario ingresar un tipo de raza")
     }
     return 1;
 }
 
-ingresarRaza()
-
-function validarRaza (raza){
-    let tipoRaza = raza
+function validarRaza (){
+    let tipoRaza = nombreRaza()
     while(tipoRaza >= 5 || tipoRaza <= 0){
-    tipoRaza = raza
+    tipoRaza = nombreRaza()
     }if(tipoRaza == "1"){
             console.log("Usted selecciono: Humano")
             console.log("--------------------------")
@@ -307,10 +301,10 @@ function validarRaza (raza){
         }
     }
 
-function validarClase(clase){
-    let tipoClase = clase
+function validarClase(){
+    let tipoClase = nombreClase()
     while(tipoClase >= 5 || tipoClase <= 0){
-        tipoClase = clase
+        tipoClase = nombreClase()
     }
     if(tipoClase == 1 ){
         console.log("Usted selecciono: Mago")
@@ -451,30 +445,12 @@ console.log(listaPersonajes);
 //     }
 
 
-
-// function ingresarPelea (r){
-//     if(r){
-//         let seleccionRival = seleccionBot()
-//         selecRival(seleccionRival)
-//         arrayBot(seleccionRival)
-// }else {
-//     alert("Es necesario ingresar un tipo de raza")
-// }
-// return 1;
-// }
-
-
-function dificultad(){
-    let valor = $("#pelea").val();
-    localStorage.setItem("dificultad", JSON.stringify(valor))
-    console.log("dificultad", valor)
-}
     
 function seleccionBot(){
-    // alert("A continuacion comenzaremos la batalla");
-    let seleccionRival = parseInt(JSON.parse(localStorage.getItem("dificultad")))
+    alert("A continuacion comenzaremos la batalla");
+    let seleccionRival = Number(prompt("Elija el nivel de dificultad de la batalla:\n 1:Facil\n 2:Normal\n 3:Dificil"))
     while(seleccionRival >= 4 || seleccionRival <= 0){
-        seleccionRival = parseInt(JSON.parse(localStorage.getItem("dificultad")))
+        seleccionRival = Number(prompt("Elija el nivel de dificultad de la batalla:\n 1:Facil\n 2:Normal\n 3:Dificil"))
     }if(seleccionRival == "1"){
         console.log("Usted eligio pelear contra la maquina en facil")
         console.log("--------------------------")
@@ -487,8 +463,6 @@ function seleccionBot(){
         console.log("Usted eligio pelear contra la maquina en Dificil")
         console.log("--------------------------")
         return 3;
-    }else {
-        alert("Es necesario crear un personaje")
     }
 }
 
@@ -514,36 +488,33 @@ function selecRival (seleccionRival){
     }
 }
 
-selecRival(JSON.parse(localStorage.getItem("dificultad")))
-
-// function arrayBot(seleccionRival){
-//     const Bot = selecRival(seleccionRival);
-//     listaBot.push(Bot);
-// }
-// console.log(listaBot);
+function arrayBot(seleccionRival){
+    const Bot = selecRival(seleccionRival);
+    listaBot.push(Bot);
+}
+console.log(listaBot);
 
 const resta= [];
 
-listaBot.push(Bot);
 
-// function restar(){
-//     const ataque = listaPersonajes[0].estadisticas.ataque
-//     const defensa = listaBot[0].estadisticas.defensa
-//     console.log("--------------------------");
-//     console.log(listaPersonajes);
-//     console.log("Ataque", ataque);
-//     console.log("Defensa",defensa);
-//     if(ataque >= defensa){
-//         alert("Derrotaste a tu enemigo, subiste de nivel");
-//         alert("Nivel 2");
-//         console.log("Nivel 2");
-//         nivel();
-//     }else(
-//         alert("Tu enemigo te ha derrotado.")
-//     )
-// }
+function restar(){
+    const ataque = listaPersonajes[0].estadisticas.ataque
+    const defensa = listaBot[0].estadisticas.defensa
+    console.log("--------------------------");
+    console.log(listaPersonajes);
+    console.log("Ataque", ataque);
+    console.log("Defensa",defensa);
+    if(ataque >= defensa){
+        alert("Derrotaste a tu enemigo, subiste de nivel");
+        alert("Nivel 2");
+        console.log("Nivel 2");
+        nivel();
+    }else(
+        alert("Tu enemigo te ha derrotado.")
+    )
+}
 
-// restar();
+restar();
 
 function nivel(){
     listaPersonajes[0].estadisticas.ataque = listaPersonajes[0].estadisticas.ataque + 2;
@@ -568,6 +539,10 @@ nombreRegion.addEventListener('keyup', function(e) {
     }
 });
 
+function seleccionSi (){
+    text = "El personaje va a pelear";
+    console.log(text)
+}
 
 function nombreUsuario() {
     var user = document.getElementById("personaje").value;
@@ -581,7 +556,15 @@ function seleccionNo(){
     console.log(text)
 }
 
+function nombreRaza(){
+    let imputvalue = Number(document.getElementById('raza').value);
+    return 1;
+}
 
+function nombreClase(){
+    let imputvalue = Number(document.getElementById('clase').value);
+    return 1;
+}
 
 // persobajes en local storage:
 localStorage.setItem("listaDePersonajes", JSON.stringify(listaPersonajes));
@@ -605,5 +588,4 @@ for (const personaje of listaStorage) {
                                 <li> Agilidad: ${personaje.estadisticas.agilidad}</li>
                             </ul>`;
     document.body.appendChild(contenedor);
-}
 }

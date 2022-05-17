@@ -100,44 +100,29 @@
                 <div id=”contenedor”>
                     <p class=”texto”></p>
                 </div>
-            <form>   
-                <div class="container">
-                    <div>
-                        <h2 class="fw-light">Ingrese el nombre del personaje</h2>
-                        <input type="text" id="personaje" name="personaje" placeholder="Personaje" value="">
-                    </div>
-                    <h2 class="fw-light">Ingresar raza</h2>
-                    <select class="form-select" aria-label="Default select example" id="raza">
-                        <option selected>Ingresar Raza</option>
-                        <option value="1">Humano</option>
-                        <option value="2">Orco</option>
-                        <option value="3">Elfo</option>
-                        <option value="4">Enano</option>
-                    </select>
-                </div>
-                <div class="container">
-                    <h2 class="fw-light">Ingresar clase</h2>
-                    <select class="form-select" aria-label="Default select example " id="clase">
-                        <option selected>Ingresar Clase</option>
-                        <option value="1">Mago</option>
-                        <option value="2">Guerrero</option>
-                        <option value="3">Tirador</option>
-                        <option value="4">Paladin</option>
-                    </select>
-                <button type="button" onclick="enviar()">ENVIAR</button>
-                </div>
-            </form> 
+            </div>
+            <div id="append">
+            </div>
             <div class="container">
-                <h1 class="fw-light">Elija el nivel de dificultad para pelear</h1>
-                <select class="form-select" aria-label="Default select example " id="pelea">
-                    <option selected>Ingresar dificultad</option>
-                    <option value="1">Facil</option>
-                    <option value="2">Medio</option>
-                    <option value="3">Dificil</option>
-                </select>
+                <h2 class="fw-light">Ingrese el nombre del personaje</h2>
+                <input type="text" id="personaje" name="personaje" placeholder="Personaje" value="">
+                <input class="btn btn-secondary" onclick="nombreUsuario()" id = "Aceptar" type="submit" value="aceptar">
+            </div>
+            <div class="container">
+                <h2 class="fw-light">Ingresar raza:\n 1:Humano\n 2:Orco\n 3:Elfo\n 4:Enano</h2>
+                <input type="text" id="raza" name="raza" placeholder="raza" value="">
+                <input class="btn btn-secondary" onclick="nombreRaza()" id = "Aceptar" type="submit" value="aceptar">
+            </div>
+            <div class="container">
+                <h2 class="fw-light">Ingresar clase:\n 1:Mago\n 2:Guerrero\n 3:Tirador\n 4:Paladin</h2>
+                <input type="text" id="clase" name="clase" placeholder="clase" value="">
+                <input class="btn btn-secondary" onclick="nombreClase()" id = "Aceptar" type="submit" value="aceptar">
+            </div>
+            <div class="container">
+                <h1 class="fw-light">Desea pelear</h1>
                 <div class="btn">
-                    <button type="button" onclick="dificultad()">Combatir</button>
-                    <button type="button" onclick="seleccionNo()">Retirarse</button>
+                    <input class="btn btn-secondary" id = "si" type="submit" onclick="seleccionSi()" value="Si">
+                    <input class="btn btn-secondary" id = "no" type="submit" onclick="seleccionNo()" value="No">
                 </div>
             </div>
             <input type="text" id="region" class="form-control" placeholder="Selecciona una region para comenzar">
@@ -202,6 +187,5 @@
             </div>
         </footer> -->
     </body>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="JS/app.js"></script>
 </html>
