@@ -252,12 +252,15 @@ class Bot{
 const listaPersonajes =[];
 const listaBot =[];
 
-seleccionarRaza();
+
+
 
 function seleccionarRaza(){
     let seleccion = confirm ("Ingrese su raza para comenzar el juego")
     ingresarRaza (seleccion)
 }
+
+seleccionarRaza();
 
 function ingresarRaza (r){
     if(r){
@@ -276,9 +279,9 @@ function ingresarRaza (r){
 }
 
 function validarRaza (){
-    let tipoRaza = Number(prompt("Ingresar raza:\n 1:Humano\n 2:Orco\n 3:Elfo\n 4:Enano"))
+    let tipoRaza = nombreRaza()
     while(tipoRaza >= 5 || tipoRaza <= 0){
-    tipoRaza = Number(prompt("Ingresar raza:\n 1:Humano\n 2:Orco\n 3:Elfo\n 4:Enano"))
+    tipoRaza = nombreRaza()
     }if(tipoRaza == "1"){
             console.log("Usted selecciono: Humano")
             console.log("--------------------------")
@@ -299,9 +302,9 @@ function validarRaza (){
     }
 
 function validarClase(){
-    let tipoClase = Number(prompt("Ingresar clase:\n 1:Mago\n 2:Guerrero\n 3:Tirador\n 4:Paladin"))
+    let tipoClase = nombreClase()
     while(tipoClase >= 5 || tipoClase <= 0){
-        tipoClase = Number(prompt("Ingresar clase:\n 1:Mago\n 2:Guerrero\n 3:Tirador\n 4:Paladin"))
+        tipoClase = nombreClase()
     }
     if(tipoClase == 1 ){
         console.log("Usted selecciono: Mago")
@@ -428,16 +431,18 @@ function arrayPersonaje(seleccionRaza, seleccionClase){
     listaPersonajes.push(Personaje);
 }
 
+
+
 console.log(listaPersonajes);
 
-function finalizarSeleccion (){
-    let seleccionFinalizar = prompt("Desea crear un nuevo personaje:\n 1:Si\n 2:No")
-        if (seleccionFinalizar === "1"){
-            seleccionarRaza();
-        } else {
-            console.log("Ya se ha seleccionado su personaje")
-        }
-    }
+// function finalizarSeleccion (){
+//     let seleccionFinalizar = prompt("Desea crear un nuevo personaje:\n 1:Si\n 2:No")
+//         if (seleccionFinalizar === "1"){
+//             seleccionarRaza();
+//         } else {
+//             console.log("Ya se ha seleccionado su personaje")
+//         }
+//     }
 
 
     
@@ -526,25 +531,6 @@ function nivel(){
 
 console.log(listaPersonajes)
 
-for (const personaje of listaPersonajes) {
-    let contenedor = document.createElement("div");
-    contenedor.innerHTML = `<h1 class= "container"> Raza: ${personaje.raza}</h1>
-                            <p class= "container">  Clase: ${personaje.clase}</p>
-                            <ul class= "container"> Estadisticas:
-                                <li> Ataque: ${personaje.estadisticas.ataque}</li>
-                                <li> Defensa: ${personaje.estadisticas.defensa}</li>
-                                <li> Mana: ${personaje.estadisticas.mana}</li>
-                                <li> Ataque Magico: ${personaje.estadisticas.ataqueMagico}</li>
-                                <li> Defensa Magica: ${personaje.estadisticas.defensaMagica}</li>
-                                <li> Velocidad: ${personaje.estadisticas.velocidad}</li>
-                                <li> Presicion: ${personaje.estadisticas.presicion}</li>
-                                <li> Inteligencia: ${personaje.estadisticas.inteligencia}</li>
-                                <li> Agilidad: ${personaje.estadisticas.agilidad}</li>
-                            </ul>`;
-    document.body.appendChild(contenedor);
-}
-
-
 var nombreRegion = document.getElementById('region');
 nombreRegion.addEventListener('keyup', function(e) {
     var keycode = e.keycode || e.which;
@@ -568,4 +554,38 @@ function nombreUsuario() {
 function seleccionNo(){
     text = "El personaje no va a pelear";
     console.log(text)
+}
+
+function nombreRaza(){
+    let imputvalue = Number(document.getElementById('raza').value);
+    return 1;
+}
+
+function nombreClase(){
+    let imputvalue = Number(document.getElementById('clase').value);
+    return 1;
+}
+
+// persobajes en local storage:
+localStorage.setItem("listaDePersonajes", JSON.stringify(listaPersonajes));
+
+const listaStorage = JSON.parse(localStorage.getItem("listaDePersonajes"))
+console.log(listaStorage)
+
+for (const personaje of listaStorage) {
+    let contenedor = document.createElement("div");
+    contenedor.innerHTML = `<h1 class= "container"> Raza: ${personaje.raza}</h1>
+                            <p class= "container">  Clase: ${personaje.clase}</p>
+                            <ul class= "container"> Estadisticas:
+                                <li> Ataque: ${personaje.estadisticas.ataque}</li>
+                                <li> Defensa: ${personaje.estadisticas.defensa}</li>
+                                <li> Mana: ${personaje.estadisticas.mana}</li>
+                                <li> Ataque Magico: ${personaje.estadisticas.ataqueMagico}</li>
+                                <li> Defensa Magica: ${personaje.estadisticas.defensaMagica}</li>
+                                <li> Velocidad: ${personaje.estadisticas.velocidad}</li>
+                                <li> Presicion: ${personaje.estadisticas.presicion}</li>
+                                <li> Inteligencia: ${personaje.estadisticas.inteligencia}</li>
+                                <li> Agilidad: ${personaje.estadisticas.agilidad}</li>
+                            </ul>`;
+    document.body.appendChild(contenedor);
 }
