@@ -252,33 +252,43 @@ class Bot{
 const listaPersonajes =[];
 const listaBot =[];
 
-seleccionarRaza();
+function enviar(){
+    let nombre = document.getElementById("personaje").value
+    let raza = document.getElementById("raza").value
+    let clase = document.getElementById("clase").value
+    console.log(raza)
+    console.log(nombre)
+    console.log(clase)
+
 
 function seleccionarRaza(){
     let seleccion = confirm ("Ingrese su raza para comenzar el juego")
     ingresarRaza (seleccion)
 }
 
+
+
+seleccionarRaza();
+
 function ingresarRaza (r){
-    if(r){
-        let seleccionRaza = validarRaza();
-        let seleccionClase = validarClase();
-        razaClase(seleccionRaza, seleccionClase);
-        finalizarSeleccion ();
-        arrayPersonaje(seleccionRaza, seleccionClase);
-        let seleccionRival = seleccionBot()
-        selecRival(seleccionRival)
-        arrayBot(seleccionRival)
+        if(r){
+            let seleccionRaza = validarRaza(raza);
+            let seleccionClase = validarClase(clase);
+            razaClase(seleccionRaza, seleccionClase);
+            //finalizarSeleccion ();
+            arrayPersonaje(seleccionRaza, seleccionClase);
     }else {
         alert("Es necesario ingresar un tipo de raza")
     }
     return 1;
 }
 
-function validarRaza (){
-    let tipoRaza = Number(prompt("Ingresar raza:\n 1:Humano\n 2:Orco\n 3:Elfo\n 4:Enano"))
+ingresarRaza()
+
+function validarRaza (raza){
+    let tipoRaza = raza
     while(tipoRaza >= 5 || tipoRaza <= 0){
-    tipoRaza = Number(prompt("Ingresar raza:\n 1:Humano\n 2:Orco\n 3:Elfo\n 4:Enano"))
+    tipoRaza = raza
     }if(tipoRaza == "1"){
             console.log("Usted selecciono: Humano")
             console.log("--------------------------")
@@ -298,10 +308,10 @@ function validarRaza (){
         }
     }
 
-function validarClase(){
-    let tipoClase = Number(prompt("Ingresar clase:\n 1:Mago\n 2:Guerrero\n 3:Tirador\n 4:Paladin"))
+function validarClase(clase){
+    let tipoClase = clase
     while(tipoClase >= 5 || tipoClase <= 0){
-        tipoClase = Number(prompt("Ingresar clase:\n 1:Mago\n 2:Guerrero\n 3:Tirador\n 4:Paladin"))
+        tipoClase = clase
     }
     if(tipoClase == 1 ){
         console.log("Usted selecciono: Mago")
@@ -428,24 +438,44 @@ function arrayPersonaje(seleccionRaza, seleccionClase){
     listaPersonajes.push(Personaje);
 }
 
+
+
 console.log(listaPersonajes);
 
-function finalizarSeleccion (){
-    let seleccionFinalizar = prompt("Desea crear un nuevo personaje:\n 1:Si\n 2:No")
-        if (seleccionFinalizar === "1"){
-            seleccionarRaza();
-        } else {
-            console.log("Ya se ha seleccionado su personaje")
-        }
-    }
+// function finalizarSeleccion (){
+//     let seleccionFinalizar = prompt("Desea crear un nuevo personaje:\n 1:Si\n 2:No")
+//         if (seleccionFinalizar === "1"){
+//             seleccionarRaza();
+//         } else {
+//             console.log("Ya se ha seleccionado su personaje")
+//         }
+//     }
 
 
+
+// function ingresarPelea (r){
+//     if(r){
+//         let seleccionRival = seleccionBot()
+//         selecRival(seleccionRival)
+//         arrayBot(seleccionRival)
+// }else {
+//     alert("Es necesario ingresar un tipo de raza")
+// }
+// return 1;
+// }
+
+
+function dificultad(){
+    let valor = $("#pelea").val();
+    localStorage.setItem("dificultad", JSON.stringify(valor))
+    console.log("dificultad", valor)
+}
     
 function seleccionBot(){
-    alert("A continuacion comenzaremos la batalla");
-    let seleccionRival = Number(prompt("Elija el nivel de dificultad de la batalla:\n 1:Facil\n 2:Normal\n 3:Dificil"))
+    // alert("A continuacion comenzaremos la batalla");
+    let seleccionRival = parseInt(JSON.parse(localStorage.getItem("dificultad")))
     while(seleccionRival >= 4 || seleccionRival <= 0){
-        seleccionRival = Number(prompt("Elija el nivel de dificultad de la batalla:\n 1:Facil\n 2:Normal\n 3:Dificil"))
+        seleccionRival = parseInt(JSON.parse(localStorage.getItem("dificultad")))
     }if(seleccionRival == "1"){
         console.log("Usted eligio pelear contra la maquina en facil")
         console.log("--------------------------")
@@ -458,6 +488,8 @@ function seleccionBot(){
         console.log("Usted eligio pelear contra la maquina en Dificil")
         console.log("--------------------------")
         return 3;
+    }else {
+        alert("Es necesario crear un personaje")
     }
 }
 
@@ -483,33 +515,36 @@ function selecRival (seleccionRival){
     }
 }
 
-function arrayBot(seleccionRival){
-    const Bot = selecRival(seleccionRival);
-    listaBot.push(Bot);
-}
-console.log(listaBot);
+selecRival(JSON.parse(localStorage.getItem("dificultad")))
+
+// function arrayBot(seleccionRival){
+//     const Bot = selecRival(seleccionRival);
+//     listaBot.push(Bot);
+// }
+// console.log(listaBot);
 
 const resta= [];
 
+listaBot.push(Bot);
 
-function restar(){
-    const ataque = listaPersonajes[0].estadisticas.ataque
-    const defensa = listaBot[0].estadisticas.defensa
-    console.log("--------------------------");
-    console.log(listaPersonajes);
-    console.log("Ataque", ataque);
-    console.log("Defensa",defensa);
-    if(ataque >= defensa){
-        alert("Derrotaste a tu enemigo, subiste de nivel");
-        alert("Nivel 2");
-        console.log("Nivel 2");
-        nivel();
-    }else(
-        alert("Tu enemigo te ha derrotado.")
-    )
-}
+// function restar(){
+//     const ataque = listaPersonajes[0].estadisticas.ataque
+//     const defensa = listaBot[0].estadisticas.defensa
+//     console.log("--------------------------");
+//     console.log(listaPersonajes);
+//     console.log("Ataque", ataque);
+//     console.log("Defensa",defensa);
+//     if(ataque >= defensa){
+//         alert("Derrotaste a tu enemigo, subiste de nivel");
+//         alert("Nivel 2");
+//         console.log("Nivel 2");
+//         nivel();
+//     }else(
+//         alert("Tu enemigo te ha derrotado.")
+//     )
+// }
 
-restar();
+// restar();
 
 function nivel(){
     listaPersonajes[0].estadisticas.ataque = listaPersonajes[0].estadisticas.ataque + 2;
@@ -526,7 +561,36 @@ function nivel(){
 
 console.log(listaPersonajes)
 
-for (const personaje of listaPersonajes) {
+var nombreRegion = document.getElementById('region');
+nombreRegion.addEventListener('keyup', function(e) {
+    var keycode = e.keycode || e.which;
+    if (keycode == 13) {
+        alert("Selecciono la region con Enter!");
+    }
+});
+
+
+function nombreUsuario() {
+    var user = document.getElementById("personaje").value;
+    text = "El nombre de usuario es '" + user;
+    console.log(text)
+    alert(text)
+}
+
+function seleccionNo(){
+    text = "El personaje no va a pelear";
+    console.log(text)
+}
+
+
+
+// persobajes en local storage:
+localStorage.setItem("listaDePersonajes", JSON.stringify(listaPersonajes));
+
+const listaStorage = JSON.parse(localStorage.getItem("listaDePersonajes"))
+console.log(listaStorage)
+
+for (const personaje of listaStorage) {
     let contenedor = document.createElement("div");
     contenedor.innerHTML = `<h1 class= "container"> Raza: ${personaje.raza}</h1>
                             <p class= "container">  Clase: ${personaje.clase}</p>
@@ -543,29 +607,27 @@ for (const personaje of listaPersonajes) {
                             </ul>`;
     document.body.appendChild(contenedor);
 }
-
-
-var nombreRegion = document.getElementById('region');
-nombreRegion.addEventListener('keyup', function(e) {
-    var keycode = e.keycode || e.which;
-    if (keycode == 13) {
-        alert("Selecciono la region con Enter!");
-    }
-});
-
-function seleccionSi (){
-    text = "El personaje va a pelear";
-    console.log(text)
 }
 
-function nombreUsuario() {
-    var user = document.getElementById("personaje").value;
-    text = "El nombre de usuario es '" + user;
-    console.log(text)
-    alert(text)
-}
 
-function seleccionNo(){
-    text = "El personaje no va a pelear";
-    console.log(text)
-}
+const btn = document.querySelector('#miBoton')
+btn.addEventListener('click', () => {
+
+Swal.fire({
+    title: 'Vamos!!!',
+    text: 'Haz decidido combatir!',
+    icon: 'success',
+    confirmButtonText: 'Pelear'
+})
+})
+
+const btn2 = document.querySelector('#miBoton2')
+btn2.addEventListener('click', () => {
+
+Swal.fire({
+    title: 'Oh Noooo!!!',
+    text: 'Haz decidido no combatir, suerte en la proxima!',
+    icon: 'error',
+    confirmButtonText: 'Salir'
+})
+})
