@@ -267,6 +267,7 @@ function seleccionarRaza(){
 }
 
 
+
 seleccionarRaza();
 
 function ingresarRaza (r){
@@ -607,3 +608,26 @@ for (const personaje of listaStorage) {
     document.body.appendChild(contenedor);
 }
 }
+
+
+const btn = document.querySelector('#miBoton')
+btn.addEventListener('click', () => {
+
+Swal.fire({
+    title: 'Vamos!!!',
+    text: 'Haz decidido combatir!',
+    icon: 'success',
+    confirmButtonText: 'Pelear'
+})
+})
+
+const btn2 = document.querySelector('#miBoton2')
+btn2.addEventListener('click', () => {
+
+Swal.fire({
+    title: 'Oh Noooo!!!',
+    text: 'Haz decidido no combatir, suerte en la proxima!',
+    icon: 'error',
+    confirmButtonText: 'Salir'
+})
+})
