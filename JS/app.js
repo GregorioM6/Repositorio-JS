@@ -258,9 +258,6 @@ function enviar(){
     let nombre = document.getElementById("personaje").value
     let raza = document.getElementById("raza").value
     let clase = elegirClase()
-    console.log("enviar",raza)
-    console.log("enviar",nombre)
-    console.log("enviar",clase)
 
 
 function seleccionarRaza(){
@@ -292,20 +289,12 @@ function validarRaza (raza){
     while(tipoRaza >= 5 || tipoRaza <= 0){
     tipoRaza = raza
     }if(tipoRaza == "1"){
-            console.log("Usted selecciono: Humano")
-            console.log("--------------------------")
             return 1;
         }else if (tipoRaza == "2"){
-            console.log("Usted selecciono: Orco")
-            console.log("--------------------------")
             return 2;
         }else if (tipoRaza == "3"){
-            console.log("Usted selecciono: Elfo")
-            console.log("--------------------------")
             return 3;
         }else if (tipoRaza == "4"){
-            console.log("Usted selecciono: Enano")
-            console.log("--------------------------")
             return 4;
         }
     }
@@ -316,20 +305,12 @@ function validarClase(clase){
         tipoClase = clase
     }
     if(tipoClase == 1 ){
-        console.log("Usted selecciono: Mago")
-        console.log("--------------------------")
         return 1;
     }else if (tipoClase == 2){
-        console.log("Usted selecciono: Guerrero")
-        console.log("--------------------------")
         return 2;
     }else if (tipoClase == 3){
-        console.log("Usted selecciono: Tirador")
-        console.log("--------------------------")
         return 3;
     }else if (tipoClase == 4){
-        console.log("Usted selecciono: Paladin")
-        console.log("--------------------------")
         return 4;
     }
 }
@@ -338,99 +319,51 @@ function validarClase(clase){
 function razaClase (seleccionRaza, seleccionClase){
     if(seleccionRaza == 1 && seleccionClase== 1 ){
         const Personaje1 = new Personaje("Humano", "Mago");
-        console.log(Personaje1);
-        console.log("Usted eligio ser Humano/Mago a continuacion vera sus estadisticas:")
-        console.log("--------------------------")
         return Personaje1;
     }else if(seleccionRaza == 1 && seleccionClase== 2 ){
         const Personaje1 = new Personaje("Humano", "Guerrero");
-        console.log(Personaje1);
-        console.log("Usted eligio ser Humano/Guerrero a continuacion vera sus estadisticas:")
-        console.log("--------------------------")
         return Personaje1;
     }else if(seleccionRaza == 1 && seleccionClase== 3 ){
         const Personaje1 = new Personaje("Humano", "Tirador");
-        console.log(Personaje1);
-        console.log("Usted eligio ser Humano/Tirador a continuacion vera sus estadisticas:")
-        console.log("--------------------------")
         return Personaje1;
     }else if(seleccionRaza == 1 && seleccionClase== 4 ){
         const Personaje1 = new Personaje("Humano", "Paladin");
-        console.log(Personaje1);
-        console.log("Usted eligio ser Humano/Paladin a continuacion vera sus estadisticas:")
-        console.log("--------------------------")
         return Personaje1;
     }else if(seleccionRaza == 2 && seleccionClase== 1 ){
         const Personaje1 = new Personaje("Orco", "Mago");
-        console.log(Personaje1)
-        console.log("Usted eligio ser Orco/Mago a continuacion vera sus estadisticas:")
-        console.log("--------------------------")
         return Personaje1;
     }else if(seleccionRaza == 2 && seleccionClase== 2 ){
         const Personaje1 = new Personaje("Orco", "Guerrero");
-        console.log(Personaje1)
-        console.log("Usted eligio ser Orco/Guerrero a continuacion vera sus estadisticas:")
-        console.log("--------------------------")
         return Personaje1;
     }else if(seleccionRaza == 2 && seleccionClase== 3 ){
         const Personaje1 = new Personaje("Orco", "Tirador");
-        console.log(Personaje1)
-        console.log("Usted eligio ser Orco/Tirador a continuacion vera sus estadisticas:")
-        console.log("--------------------------")
         return Personaje1;
     }else if(seleccionRaza == 2 && seleccionClase== 4 ){
         const Personaje1 = new Personaje("Orco", "Paladin");
-        console.log(Personaje1)
-        console.log("Usted eligio ser Orco/Paladin a continuacion vera sus estadisticas:")
-        console.log("--------------------------")
         return Personaje1;
     }else if(seleccionRaza == 3 && seleccionClase== 1 ){
         const Personaje1 = new Personaje("Elfo", "Mago");
-        console.log(Personaje1)
-        console.log("Usted eligio ser Elfo/Mago a continuacion vera sus estadisticas:")
-        console.log("--------------------------")
         return Personaje1;
     }else if(seleccionRaza == 3 && seleccionClase== 2 ){
         const Personaje1 = new Personaje("Elfo", "Guerrero");
-        console.log(Personaje1)
-        console.log("Usted eligio ser Elfo/Guerrero a continuacion vera sus estadisticas:")
-        console.log("--------------------------")
         return Personaje1;
     }else if(seleccionRaza == 3 && seleccionClase== 3 ){
         const Personaje1 = new Personaje("Elfo", "Tirador");
-        console.log(Personaje1)
-        console.log("Usted eligio ser Elfo/Tirador a continuacion vera sus estadisticas:")
-        console.log("--------------------------")
         return Personaje1;
     }else if(seleccionRaza == 3 && seleccionClase== 4 ){
         const Personaje1 = new Personaje("Elfo", "Paladin");
-        console.log(Personaje1)
-        console.log("Usted eligio ser Elfo/Paladin a continuacion vera sus estadisticas:")
-        console.log("--------------------------")
         return Personaje1;
     }else if(seleccionRaza == 4 && seleccionClase== 1 ){
         const Personaje1 = new Personaje("Enano", "Mago");
-        console.log(Personaje1)
-        console.log("Usted eligio ser Enano/Mago a continuacion vera sus estadisticas:")
-        console.log("--------------------------")
         return Personaje1;
     }else if(seleccionRaza == 4 && seleccionClase== 2 ){
         const Personaje1 = new Personaje("Enano", "Guerrero");
-        console.log(Personaje1)
-        console.log("Usted eligio ser Enano/Guerrero a continuacion vera sus estadisticas:")
-        console.log("--------------------------")
         return Personaje1;
     }else if(seleccionRaza == 4 && seleccionClase== 3 ){
         const Personaje1 = new Personaje("Enano", "Tirador");
-        console.log(Personaje1)
-        console.log("Usted eligio ser Enano/Tirador a continuacion vera sus estadisticas:")
-        console.log("--------------------------")
         return Personaje1;
     }else if(seleccionRaza == 4 && seleccionClase== 4 ){
         const Personaje1 = new Personaje("Enano", "Paladin");
-        console.log(Personaje1)
-        console.log("Usted eligio ser Enano/Paladin a continuacion vera sus estadisticas:")
-        console.log("--------------------------")
         return Personaje1;
     }
 }
@@ -441,16 +374,10 @@ function arrayPersonaje(seleccionRaza, seleccionClase){
 }
 
 
-
-console.log(listaPersonajes);
-
-
-
-// persobajes en local storage:
 localStorage.setItem("listaDePersonajes", JSON.stringify(listaPersonajes));
 
 const listaStorage = JSON.parse(localStorage.getItem("listaDePersonajes"))
-console.log(listaStorage)
+
 
 for (const personaje of listaStorage) {
     let tarjetaEstadisticas = document.getElementById('tarjetaEstadisticas')
@@ -478,7 +405,6 @@ for (const personaje of listaStorage) {
 }
 }
 
-
 const btn = document.querySelector('#miBoton')
 btn.addEventListener('click', () => {
 
@@ -501,6 +427,108 @@ Swal.fire({
 })
 })
 
+function elegirClase(){
+    let clase = document.getElementById('clase').value
+    let elm = document.getElementById('enviar');
+    if(elm.className === 'none'){
+        elm.className = 'btn-success';
+    } 
+    return clase
+}
+
+function vistaMenu(){
+    let elm = document.getElementById('item');
+    if(elm.className === 'none'){
+        elm.className = 'show';
+    }
+}
+
+function nivel(){
+    listaPersonajes[0].estadisticas.ataque = listaPersonajes[0].estadisticas.ataque + 2;
+    listaPersonajes[0].estadisticas.defensa = listaPersonajes[0].estadisticas.defensa + 2;
+    listaPersonajes[0].estadisticas.mana = listaPersonajes[0].estadisticas.mana + 2;
+    listaPersonajes[0].estadisticas.ataqueMagico = listaPersonajes[0].estadisticas.ataqueMagico + 2;
+    listaPersonajes[0].estadisticas.defensaMagica = listaPersonajes[0].estadisticas.defensaMagica + 2;
+    listaPersonajes[0].estadisticas.velocidad = listaPersonajes[0].estadisticas.velocidad + 2;
+    listaPersonajes[0].estadisticas.presicion = listaPersonajes[0].estadisticas.presicion + 2;
+    listaPersonajes[0].estadisticas.inteligencia = listaPersonajes[0].estadisticas.inteligencia + 2;
+    listaPersonajes[0].estadisticas.agilidad = listaPersonajes[0].estadisticas.agilidad + 2;
+    console.log("Subiste de nivel, aqui encontraras las nuevas estadisticas:", listaPersonajes[0]);
+}
+
+function dificultad(){
+    let valor = $("#pelea").val();
+    localStorage.setItem("dificultad", JSON.stringify(valor))
+    seleccionBot()
+    selecRival(JSON.parse(localStorage.getItem("dificultad")))
+    nivel()
+}
+
+
+
+
+function seleccionNo(){
+    text = "El personaje no va a pelear";
+    console.log(text)
+}
+
+function selecRival (seleccionRival){
+    if(seleccionRival == 1 ){
+        const Bot1 = new Bot("Bot1");
+        console.log(Bot1);
+        console.log("Usted eligio Bot1")
+        console.log("--------------------------")
+        return Bot1;
+    }else if(seleccionRival == 2 ){
+        const Bot1 = new Bot("Bot2");
+        console.log(Bot1);
+        console.log("Usted eligio Bot2")
+        console.log("--------------------------")
+        return Bot1;
+    }else if(seleccionRival == 3 ){
+        const Bot1 = new Bot("Bot3");
+        console.log(Bot1);
+        console.log("Usted eligio Bot3")
+        console.log("--------------------------")
+        return Bot1;
+    }
+}
+
+function seleccionBot(){
+    // alert("A continuacion comenzaremos la batalla");
+    let seleccionRival = parseInt(JSON.parse(localStorage.getItem("dificultad")))
+    while(seleccionRival >= 4 || seleccionRival <= 0){
+        seleccionRival = parseInt(JSON.parse(localStorage.getItem("dificultad")))
+    }if(seleccionRival == "1"){
+        console.log("Usted eligio pelear contra la maquina en facil")
+        console.log("--------------------------")
+        return 1;
+    }else if (seleccionRival == "2"){
+        console.log("Usted eligio pelear contra la maquina en Normal")
+        console.log("--------------------------")
+        return 2;
+    }else if (seleccionRival == "3"){
+        console.log("Usted eligio pelear contra la maquina en Dificil")
+        console.log("--------------------------")
+        return 3;
+    }else {
+        alert("Es necesario crear un personaje")
+    }
+
+}
+
+const resta= [];
+
+listaBot.push(Bot);
+
+function nombreUsuario() {
+    var user = document.getElementById("personaje").value;
+    text = "El nombre de usuario es '" + user;
+    console.log(text)
+    alert(text)
+}
+
+console.log(listaPersonajes)
 
 let btn3 = document.querySelector("#btnClima");
 btn3.addEventListener('click', () => {
@@ -531,118 +559,3 @@ btn3.addEventListener('click', () => {
             })
     }
 })
-
-
-
-function elegirClase(){
-
-    let clase = document.getElementById('clase').value
-   //console.log("elegiclase",clase)
-   let elm = document.getElementById('enviar');
-
-    if(elm.className === 'none'){
-        elm.className = 'btn-success';
-    } 
-    return clase
-}
-
-function vistaMenu(){
-
-    let elm = document.getElementById('item');
-    if(elm.className === 'none'){
-        elm.className = 'show';
-    } 
-}
-
-function dificultad(){
-    let valor = $("#pelea").val();
-    localStorage.setItem("dificultad", JSON.stringify(valor))
-    console.log("dificultad", valor)
-
-    seleccionBot()
-   
-    selecRival(JSON.parse(localStorage.getItem("dificultad")))
-    nivel()
-}
-
-function nivel(){
-    listaPersonajes[0].estadisticas.ataque = listaPersonajes[0].estadisticas.ataque + 2;
-    listaPersonajes[0].estadisticas.defensa = listaPersonajes[0].estadisticas.defensa + 2;
-    listaPersonajes[0].estadisticas.mana = listaPersonajes[0].estadisticas.mana + 2;
-    listaPersonajes[0].estadisticas.ataqueMagico = listaPersonajes[0].estadisticas.ataqueMagico + 2;
-    listaPersonajes[0].estadisticas.defensaMagica = listaPersonajes[0].estadisticas.defensaMagica + 2;
-    listaPersonajes[0].estadisticas.velocidad = listaPersonajes[0].estadisticas.velocidad + 2;
-    listaPersonajes[0].estadisticas.presicion = listaPersonajes[0].estadisticas.presicion + 2;
-    listaPersonajes[0].estadisticas.inteligencia = listaPersonajes[0].estadisticas.inteligencia + 2;
-    listaPersonajes[0].estadisticas.agilidad = listaPersonajes[0].estadisticas.agilidad + 2;
-
-    console.log("Subiste de nivel, aqui encontraras las nuevas estadisticas:", listaPersonajes[0]);
-}
-
-
-function nombreUsuario() {
-    var user = document.getElementById("personaje").value;
-    text = "El nombre de usuario es '" + user;
-    console.log(text)
-    alert(text)
-}
-
-function seleccionNo(){
-    text = "El personaje no va a pelear";
-    console.log(text)
-}
-
-function selecRival (seleccionRival){
-    if(seleccionRival == 1 ){
-        const Bot1 = new Bot("Bot1");
-        console.log(Bot1);
-        console.log("Usted eligio Bot1")
-        console.log("--------------------------")
-        return Bot1;
-    }else if(seleccionRival == 2 ){
-        const Bot1 = new Bot("Bot2");
-        console.log(Bot1);
-        console.log("Usted eligio Bot2")
-        console.log("--------------------------")
-        return Bot1;
-    }else if(seleccionRival == 3 ){
-        const Bot1 = new Bot("Bot3");
-        console.log(Bot1);
-        console.log("Usted eligio Bot3")
-        console.log("--------------------------")
-        return Bot1;
-    }
-}
-
-  
-function seleccionBot(){
-    // alert("A continuacion comenzaremos la batalla");
-    let seleccionRival = parseInt(JSON.parse(localStorage.getItem("dificultad")))
-    while(seleccionRival >= 4 || seleccionRival <= 0){
-        seleccionRival = parseInt(JSON.parse(localStorage.getItem("dificultad")))
-    }if(seleccionRival == "1"){
-        console.log("Usted eligio pelear contra la maquina en facil")
-        console.log("--------------------------")
-        return 1;
-    }else if (seleccionRival == "2"){
-        console.log("Usted eligio pelear contra la maquina en Normal")
-        console.log("--------------------------")
-        return 2;
-    }else if (seleccionRival == "3"){
-        console.log("Usted eligio pelear contra la maquina en Dificil")
-        console.log("--------------------------")
-        return 3;
-    }else {
-        alert("Es necesario crear un personaje")
-    }
-
-}
-
-
-
-const resta= [];
-
-listaBot.push(Bot);
-
-
-console.log(listaPersonajes)
