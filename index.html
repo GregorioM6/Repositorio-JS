@@ -98,52 +98,68 @@
                 <div id=”contenedor”>
                     <p class=”texto”></p>
                 </div>
-            <form>   
-                <div class="container">
-                    <div>
-                        <h2 class="fw-light">Ingrese el nombre del personaje</h2>
-                        <input type="text" id="personaje" name="personaje" placeholder="Personaje" value="">
-                    </div>
-                    <h2 class="fw-light">Ingresar raza</h2>
-                    <select class="form-select" aria-label="Default select example" id="raza">
-                        <option selected>Ingresar Raza</option>
-                        <option value="1">Humano</option>
-                        <option value="2">Orco</option>
-                        <option value="3">Elfo</option>
-                        <option value="4">Enano</option>
-                    </select>
-                </div>
-                <div class="container">
-                    <h2 class="fw-light">Ingresar clase</h2>
-                    <select class="form-select" aria-label="Default select example " id="clase">
-                        <option selected>Ingresar Clase</option>
-                        <option value="1">Mago</option>
-                        <option value="2">Guerrero</option>
-                        <option value="3">Tirador</option>
-                        <option value="4">Paladin</option>
-                    </select>
-                <button type="button" onclick="enviar()">ENVIAR</button>
-                </div>
-            </form> 
-            <div class="container">
-                <h1 class="fw-light">Elija el nivel de dificultad para pelear</h1>
-                <select class="form-select" aria-label="Default select example " id="pelea">
-                    <option selected>Ingresar dificultad</option>
-                    <option value="1">Facil</option>
-                    <option value="2">Medio</option>
-                    <option value="3">Dificil</option>
+      
+    <h1>BIENVENIDO A LAS BATALLAS DE LA TIERRA MEDIA</h1>
+    
+<div id="card"class="card-container" >
+     <div style="display: flex; flex-direction: row;justify-content: space-evenly ; align-items: center;">
+        <div class="tarjetaPersonaje" >
+            <img class="card-img-top" src="./imagenes/Cartoon heroes and monster vector illustrations set.jpg">
+            <div class="card-body">
+                <h5 class="card-title">Personaje</h5>
+                <select class="form-select" aria-label="Default select example" id="raza">
+                    <option selected>Ingresar Raza</option>
+                    <option value="1">Humano</option>
+                    <option value="2">Orco</option>
+                    <option value="3">Elfo</option>
+                    <option value="4">Enano</option>
                 </select>
-                <div class="btn">
-                    <button type="button" id="miBoton" onclick="dificultad()">Combatir</button>
-                    <button type="button" id="miBoton2" onclick="seleccionNo()">Retirarse</button>
-                </div>
+            <div>
+                    <h5 class="card-title" style="margin-top:10px;">Nombre</h5>
+                    <input type="text" id="personaje" name="personaje" placeholder="Escribe el nombre..." >
+        </div>
+            <button class="btn btn-success btnClase" onclick="vistaMenu()">ELEGIR CLASE</button>
+            <div class="none" id="item" style="margin-top:10px;"  >
+                <select class="form-select " aria-label="Default select example " id="clase">
+                    <option selected>Elije clase</option>
+                    <option value="1">Mago</option>
+                    <option value="2">Guerrero</option>
+                    <option value="3">Tirador</option>
+                    <option value="4">Paladin</option>
+                </select>
+                <button class="btn btn-success" type="button" onclick="elegirClase()">Elegir</button>
             </div>
-            <label for="ciudad">Selecciona una ciudad para vivir</label>
+            
+            <button id="enviar" class="none" style="margin-top:10px;" type="button" onclick="enviar()">ENVIAR</button>
+            </div>
+        </div>
+        <div id="tarjetaEstadisticas" class="tarjetaEstadisticas"></div>
+        </div>
+        <div>
+            <label for="ciudad">Selecciona una ciudad para comenzar a jugar</label>
             <input type="text" id="ciudad">
             <button id="btnClima">Obtener Clima de la ciudad</button>
             <output>
                 <p id="temperatura"></p>
             </output>
+        </div>
+        <div class="containerDificultad">
+            <div class="dificultad">
+                <h5 class="card-title" style="margin-top:10px;">Nivel de dificultad</h5>
+                <select class="form-select" aria-label="Default select example " id="pelea">
+                    <option selected>Selecciona nivel de dificultad</option>
+                    <option value="1">Facil</option>
+                    <option value="2">Medio</option>
+                    <option value="3">Dificil</option>
+                </select>
+                <div class="btn">
+                    <button class="btn btn-dark" type="button" id="miBoton" onclick="dificultad()">Combatir</button>
+                    <button class="btn btn-danger" type="button" id="miBoton2" onclick="seleccionNo()">Retirarse</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
         </main>
     </body>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

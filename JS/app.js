@@ -4,6 +4,7 @@ class Personaje{
         this.clase = clase;
         this.estadisticas = this.calcularEstadisticas(this.raza, this.clase);
     }
+    
     calcularEstadisticas(raza, clase){
         let estadisticas = new Estadisticas();
         if(raza == "Humano" && clase == "Mago") {
@@ -252,13 +253,14 @@ class Bot{
 const listaPersonajes =[];
 const listaBot =[];
 
+
 function enviar(){
     let nombre = document.getElementById("personaje").value
     let raza = document.getElementById("raza").value
-    let clase = document.getElementById("clase").value
-    console.log(raza)
-    console.log(nombre)
-    console.log(clase)
+    let clase = elegirClase()
+    console.log("enviar",raza)
+    console.log("enviar",nombre)
+    console.log("enviar",clase)
 
 
 function seleccionarRaza(){
@@ -442,146 +444,6 @@ function arrayPersonaje(seleccionRaza, seleccionClase){
 
 console.log(listaPersonajes);
 
-// function finalizarSeleccion (){
-//     let seleccionFinalizar = prompt("Desea crear un nuevo personaje:\n 1:Si\n 2:No")
-//         if (seleccionFinalizar === "1"){
-//             seleccionarRaza();
-//         } else {
-//             console.log("Ya se ha seleccionado su personaje")
-//         }
-//     }
-
-
-
-// function ingresarPelea (r){
-//     if(r){
-//         let seleccionRival = seleccionBot()
-//         selecRival(seleccionRival)
-//         arrayBot(seleccionRival)
-// }else {
-//     alert("Es necesario ingresar un tipo de raza")
-// }
-// return 1;
-// }
-
-
-function dificultad(){
-    let valor = $("#pelea").val();
-    localStorage.setItem("dificultad", JSON.stringify(valor))
-    console.log("dificultad", valor)
-}
-    
-function seleccionBot(){
-    // alert("A continuacion comenzaremos la batalla");
-    let seleccionRival = parseInt(JSON.parse(localStorage.getItem("dificultad")))
-    while(seleccionRival >= 4 || seleccionRival <= 0){
-        seleccionRival = parseInt(JSON.parse(localStorage.getItem("dificultad")))
-    }if(seleccionRival == "1"){
-        console.log("Usted eligio pelear contra la maquina en facil")
-        console.log("--------------------------")
-        return 1;
-    }else if (seleccionRival == "2"){
-        console.log("Usted eligio pelear contra la maquina en Normal")
-        console.log("--------------------------")
-        return 2;
-    }else if (seleccionRival == "3"){
-        console.log("Usted eligio pelear contra la maquina en Dificil")
-        console.log("--------------------------")
-        return 3;
-    }else {
-        alert("Es necesario crear un personaje")
-    }
-}
-
-function selecRival (seleccionRival){
-    if(seleccionRival == 1 ){
-        const Bot1 = new Bot("Bot1");
-        console.log(Bot1);
-        console.log("Usted eligio Bot1")
-        console.log("--------------------------")
-        return Bot1;
-    }else if(seleccionRival == 2 ){
-        const Bot1 = new Bot("Bot2");
-        console.log(Bot1);
-        console.log("Usted eligio Bot2")
-        console.log("--------------------------")
-        return Bot1;
-    }else if(seleccionRival == 3 ){
-        const Bot1 = new Bot("Bot3");
-        console.log(Bot1);
-        console.log("Usted eligio Bot3")
-        console.log("--------------------------")
-        return Bot1;
-    }
-}
-
-selecRival(JSON.parse(localStorage.getItem("dificultad")))
-
-// function arrayBot(seleccionRival){
-//     const Bot = selecRival(seleccionRival);
-//     listaBot.push(Bot);
-// }
-// console.log(listaBot);
-
-const resta= [];
-
-listaBot.push(Bot);
-
-// function restar(){
-//     const ataque = listaPersonajes[0].estadisticas.ataque
-//     const defensa = listaBot[0].estadisticas.defensa
-//     console.log("--------------------------");
-//     console.log(listaPersonajes);
-//     console.log("Ataque", ataque);
-//     console.log("Defensa",defensa);
-//     if(ataque >= defensa){
-//         alert("Derrotaste a tu enemigo, subiste de nivel");
-//         alert("Nivel 2");
-//         console.log("Nivel 2");
-//         nivel();
-//     }else(
-//         alert("Tu enemigo te ha derrotado.")
-//     )
-// }
-
-// restar();
-
-function nivel(){
-    listaPersonajes[0].estadisticas.ataque = listaPersonajes[0].estadisticas.ataque + 2;
-    listaPersonajes[0].estadisticas.defensa = listaPersonajes[0].estadisticas.defensa + 2;
-    listaPersonajes[0].estadisticas.mana = listaPersonajes[0].estadisticas.mana + 2;
-    listaPersonajes[0].estadisticas.ataqueMagico = listaPersonajes[0].estadisticas.ataqueMagico + 2;
-    listaPersonajes[0].estadisticas.defensaMagica = listaPersonajes[0].estadisticas.defensaMagica + 2;
-    listaPersonajes[0].estadisticas.velocidad = listaPersonajes[0].estadisticas.velocidad + 2;
-    listaPersonajes[0].estadisticas.presicion = listaPersonajes[0].estadisticas.presicion + 2;
-    listaPersonajes[0].estadisticas.inteligencia = listaPersonajes[0].estadisticas.inteligencia + 2;
-    listaPersonajes[0].estadisticas.agilidad = listaPersonajes[0].estadisticas.agilidad + 2;
-    console.log("Subiste de nivel, aqui encontraras las nuevas estadisticas:", listaPersonajes[0]);
-}
-
-console.log(listaPersonajes)
-
-var nombreRegion = document.getElementById('region');
-nombreRegion.addEventListener('keyup', function(e) {
-    var keycode = e.keycode || e.which;
-    if (keycode == 13) {
-        alert("Selecciono la region con Enter!");
-    }
-});
-
-
-function nombreUsuario() {
-    var user = document.getElementById("personaje").value;
-    text = "El nombre de usuario es '" + user;
-    console.log(text)
-    alert(text)
-}
-
-function seleccionNo(){
-    text = "El personaje no va a pelear";
-    console.log(text)
-}
-
 
 
 // persobajes en local storage:
@@ -591,21 +453,28 @@ const listaStorage = JSON.parse(localStorage.getItem("listaDePersonajes"))
 console.log(listaStorage)
 
 for (const personaje of listaStorage) {
+    let tarjetaEstadisticas = document.getElementById('tarjetaEstadisticas')
     let contenedor = document.createElement("div");
-    contenedor.innerHTML = `<h1 class= "container"> Raza: ${personaje.raza}</h1>
-                            <p class= "container">  Clase: ${personaje.clase}</p>
-                            <ul class= "container"> Estadisticas:
-                                <li> Ataque: ${personaje.estadisticas.ataque}</li>
-                                <li> Defensa: ${personaje.estadisticas.defensa}</li>
-                                <li> Mana: ${personaje.estadisticas.mana}</li>
-                                <li> Ataque Magico: ${personaje.estadisticas.ataqueMagico}</li>
-                                <li> Defensa Magica: ${personaje.estadisticas.defensaMagica}</li>
-                                <li> Velocidad: ${personaje.estadisticas.velocidad}</li>
-                                <li> Presicion: ${personaje.estadisticas.presicion}</li>
-                                <li> Inteligencia: ${personaje.estadisticas.inteligencia}</li>
-                                <li> Agilidad: ${personaje.estadisticas.agilidad}</li>
-                            </ul>`;
-    document.body.appendChild(contenedor);
+    contenedor.innerHTML = `<div class= "tarjetaEstadistica">
+                                <h1 class="name"> Raza: ${personaje.raza}</h1>
+                                <p class="type">  Clase: ${personaje.clase}</p>
+                                <p class="stats">  Estadisticas</p>
+                                <div class= "statslist">
+                                    <ul class="statsType">
+                                        <li> Ataque: ${personaje.estadisticas.ataque}</li>
+                                        <li> Defensa: ${personaje.estadisticas.defensa}</li>
+                                        <li> Mana: ${personaje.estadisticas.mana}</li>
+                                        <li> Ataque Magico: ${personaje.estadisticas.ataqueMagico}</li>
+                                        <li> Defensa Magica: ${personaje.estadisticas.defensaMagica}</li>
+                                        <li> Velocidad: ${personaje.estadisticas.velocidad}</li>
+                                        <li> Presicion: ${personaje.estadisticas.presicion}</li>
+                                        <li> Inteligencia: ${personaje.estadisticas.inteligencia}</li>
+                                        <li> Agilidad: ${personaje.estadisticas.agilidad}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h2> ¡Pelea y sube de nivel!</h2>`;
+        tarjetaEstadisticas.append(contenedor);
 }
 }
 
@@ -662,3 +531,118 @@ btn3.addEventListener('click', () => {
             })
     }
 })
+
+
+
+function elegirClase(){
+
+    let clase = document.getElementById('clase').value
+   //console.log("elegiclase",clase)
+   let elm = document.getElementById('enviar');
+
+    if(elm.className === 'none'){
+        elm.className = 'btn-success';
+    } 
+    return clase
+}
+
+function vistaMenu(){
+
+    let elm = document.getElementById('item');
+    if(elm.className === 'none'){
+        elm.className = 'show';
+    } 
+}
+
+function dificultad(){
+    let valor = $("#pelea").val();
+    localStorage.setItem("dificultad", JSON.stringify(valor))
+    console.log("dificultad", valor)
+
+    seleccionBot()
+   
+    selecRival(JSON.parse(localStorage.getItem("dificultad")))
+    nivel()
+}
+
+function nivel(){
+    listaPersonajes[0].estadisticas.ataque = listaPersonajes[0].estadisticas.ataque + 2;
+    listaPersonajes[0].estadisticas.defensa = listaPersonajes[0].estadisticas.defensa + 2;
+    listaPersonajes[0].estadisticas.mana = listaPersonajes[0].estadisticas.mana + 2;
+    listaPersonajes[0].estadisticas.ataqueMagico = listaPersonajes[0].estadisticas.ataqueMagico + 2;
+    listaPersonajes[0].estadisticas.defensaMagica = listaPersonajes[0].estadisticas.defensaMagica + 2;
+    listaPersonajes[0].estadisticas.velocidad = listaPersonajes[0].estadisticas.velocidad + 2;
+    listaPersonajes[0].estadisticas.presicion = listaPersonajes[0].estadisticas.presicion + 2;
+    listaPersonajes[0].estadisticas.inteligencia = listaPersonajes[0].estadisticas.inteligencia + 2;
+    listaPersonajes[0].estadisticas.agilidad = listaPersonajes[0].estadisticas.agilidad + 2;
+
+    console.log("Subiste de nivel, aqui encontraras las nuevas estadisticas:", listaPersonajes[0]);
+}
+
+
+function nombreUsuario() {
+    var user = document.getElementById("personaje").value;
+    text = "El nombre de usuario es '" + user;
+    console.log(text)
+    alert(text)
+}
+
+function seleccionNo(){
+    text = "El personaje no va a pelear";
+    console.log(text)
+}
+
+function selecRival (seleccionRival){
+    if(seleccionRival == 1 ){
+        const Bot1 = new Bot("Bot1");
+        console.log(Bot1);
+        console.log("Usted eligio Bot1")
+        console.log("--------------------------")
+        return Bot1;
+    }else if(seleccionRival == 2 ){
+        const Bot1 = new Bot("Bot2");
+        console.log(Bot1);
+        console.log("Usted eligio Bot2")
+        console.log("--------------------------")
+        return Bot1;
+    }else if(seleccionRival == 3 ){
+        const Bot1 = new Bot("Bot3");
+        console.log(Bot1);
+        console.log("Usted eligio Bot3")
+        console.log("--------------------------")
+        return Bot1;
+    }
+}
+
+  
+function seleccionBot(){
+    // alert("A continuacion comenzaremos la batalla");
+    let seleccionRival = parseInt(JSON.parse(localStorage.getItem("dificultad")))
+    while(seleccionRival >= 4 || seleccionRival <= 0){
+        seleccionRival = parseInt(JSON.parse(localStorage.getItem("dificultad")))
+    }if(seleccionRival == "1"){
+        console.log("Usted eligio pelear contra la maquina en facil")
+        console.log("--------------------------")
+        return 1;
+    }else if (seleccionRival == "2"){
+        console.log("Usted eligio pelear contra la maquina en Normal")
+        console.log("--------------------------")
+        return 2;
+    }else if (seleccionRival == "3"){
+        console.log("Usted eligio pelear contra la maquina en Dificil")
+        console.log("--------------------------")
+        return 3;
+    }else {
+        alert("Es necesario crear un personaje")
+    }
+
+}
+
+
+
+const resta= [];
+
+listaBot.push(Bot);
+
+
+console.log(listaPersonajes)
