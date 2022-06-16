@@ -70,7 +70,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 70px;
-  
+  align-items: center
 }
 
 .btnClase{
@@ -80,17 +80,21 @@ a {
 .containerDificultad{
 
   display: flex;
+  margin:50px;
+  width: 500px;
+  height: 500px;
+  background-image: url(../imagenes/batalla.jpg);
   justify-content: center;
-  margin:100px;
-  height: 600px;
+  align-items: center;
+  border-radius: 20% ;
 }
 
 .dificultad{
   padding: 50px;
   width: 550px;
   height: 250px;
-  border: black solid 4px;
 }
+
 
 /******TARJETA DE ESTADISTICAS******/
 .tarjetaEstadistica{
@@ -127,4 +131,93 @@ a {
 }
 .tarjetaEstadistica ul li{
   padding:3px;
+}
+.tarjetaPersonaje{
+  background-color: white;
+}
+.tarjetaEstadisticas{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center
+}
+.fondo{
+  background-image: url(../imagenes/fondo.jpg);
+}
+
+/**********************************/
+
+.textoddd {
+  font-size: small;
+  text-align: center;
+  font: bold 80px/1 arial;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 0  2px  0   #8b6e15,
+              0  4px  0   #7c6213,
+              0  6px  0   #6e5611, 
+              0  8px  0   #5f4b0e, 
+              0 10px  0   #503f0c,
+              0 12px  0   #41330a,
+              3px 8px 15px rgba(0,0,0,0.1),
+              3px 8px  5px rgba(0,0,0,0.3);
+}
+
+.textodd {
+  text-align: center;
+  font: bold 80px/1 arial;
+  text-transform: uppercase;
+  color: #791f52;
+  text-shadow: 0  2px  0   #8b6e15,
+              0  4px  0   #ffffff,
+              0  6px  0   #ffffff, 
+              0  8px  0   #5f4b0e, 
+              0 10px  0   #503f0c,
+              0 12px  0   #41330a,
+              3px 8px 15px rgba(0,0,0,0.1),
+              3px 8px  5px rgba(0,0,0,0.3);
+}
+
+.textod {
+  margin-bottom: 50px;
+  text-decoration: none;
+  text-align: center;
+  font: bold 80px/1 arial;
+  text-transform: uppercase;
+  color: #2f93df;
+  text-shadow: 0  2px  0   #8b6e15,
+              0  4px  0   #ffffff,
+              0  6px  0   #ffffff, 
+              0  8px  0   #5f4b0e, 
+              0 10px  0   #503f0c,
+              0 12px  0   #41330a,
+              3px 8px 15px rgba(0,0,0,0.1),
+              3px 8px  5px rgba(0,0,0,0.3);
+}
+
+.navegador{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(360deg, rgba(6,6,6,1) 1%, rgba(60,60,60,0.8029586834733894) 100%);
+  height: 100px;
+}
+
+.navegador ul{
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+
+}
+
+.navegador ul li{
+  color: white;
+  font-size: xx-large;
+  font-weight:bolder;
+  
+}
+
+.navegador ul li:hover{
+  -webkit-text-fill-color: yellowgreen;
+  -webkit-text-stroke: 1px black;
 }
