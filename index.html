@@ -9,87 +9,21 @@
         <link rel="stylesheet" href="css/style.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     </head>
-    <body style="background-color: #ffffff;">
+    <body class="fondo">
         <header class="header">
-            <nav class="navbar navbar-expand-lg navbar-light header__nav" style="background-color: #d8dde6;">
-                <div class="container">
-                    <a id="logo" href="index.html">
+            <nav class="navegador">
+                <ul>
+                    <li><a id="logo" href="index.html">
                         <img class="header__logo"
                             src="./imagenes/MLA_LOGO.png"
                             alt="LOGO"
                         />
-                    </a>
-                    <button
-                        class="navbar-toggler"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#Iconos"
-                    >
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-end" id="Iconos">
-                        <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="Personajes/">Personajes </a></li>
-                        <li class="nav-item"><a class="nav-link" href="Pelear/">Pelear </a></li>
-                        <li class="nav-item"><a class="nav-link" href="Compras/">Compras </a></li>
-                        <li class="nav-item"><a class="nav-link" href="Contacto/">Contacto </a></li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="enter" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            <img class="header__iconos"
-                                src="imagenes/enter.png"
-                                alt="enter"
-                            />
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"
-                            id="carrito" href="index.html">
-                                <img class="header__iconos"
-                                    src="./imagenes/carrito.png"
-                                    alt="carrito"
-                                />
-                            </a> 
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"
-                            id="buscar" href="index.html">
-                                <img class="header__iconos"
-                                    src="imagenes/buscar.png"
-                                    alt="Buscar"
-                                />
-                            </a> 
-                        </li>
-                        </ul>
-                    </div>
-                </div>
+                    </a></li>
+                    <li>Contacto</li>
+                    <li>JUGAR</li>
+                    <li>Personajes</li>
+                </ul>
             </nav>
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title fw-light" id="exampleModalLabel">Ingreso</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="input-group mb-3">
-                                <span class="input-group-text fw-light col-3 col-md-3" id="basic-addon1">Usuario:</span>
-                                <input type="text" class="form-control fw-light input1" placeholder="Escriba aqui" aria-label="Usuario" aria-describedby="basic-addon1">
-                            </div>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text fw-light col-3 col-md-3" id="basic-addon1">Contraseña:</span>
-                                <input type="password" class="form-control fw-light input1" placeholder="Escriba aqui" aria-label="Contraseña" aria-describedby="basic-addon1">
-                            </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary fw-light" data-bs-dismiss="modal" >Ingresar</button>
-                            <button type="button" class="btn btn-secondary fw-light" data-bs-dismiss="modal">Salir</button>
-                        </div>
-                        <div class="modal-body">
-                            <p>No tiene usuario, Ingrese<a href="Usuario/"> aquí </a>para crearlo.</p>
-                        </div>
-                        </div>
-                    </div>
-                </div>
         </header>
         <main>
             <section id ="tuPersonaje" class="container">
@@ -98,14 +32,15 @@
                 <div id=”contenedor”>
                     <p class=”texto”></p>
                 </div>
-      
-    <h1>BIENVENIDO A LAS BATALLAS DE LA TIERRA MEDIA</h1>
+            <div>
+            <p class="textoddd">¡BIENVENIDO A LA EDAD MEDIA!</p>
+            </div>
     
-<div id="card"class="card-container" >
-     <div style="display: flex; flex-direction: row;justify-content: space-evenly ; align-items: center;">
-        <div class="tarjetaPersonaje" >
-            <img class="card-img-top" src="./imagenes/Cartoon heroes and monster vector illustrations set.jpg">
-            <div class="card-body">
+            <div id="card"class="card-container">
+            <div style="display: flex; flex-direction: row;justify-content: space-evenly ; align-items: center;">
+                <div class="tarjetaPersonaje" >
+                <img class="card-img-top" src="./imagenes/Cartoon heroes and monster vector illustrations set.jpg">
+                <div class="card-body">
                 <h5 class="card-title">Personaje</h5>
                 <select class="form-select" aria-label="Default select example" id="raza">
                     <option selected>Ingresar Raza</option>
@@ -115,54 +50,48 @@
                     <option value="4">Enano</option>
                 </select>
             <div>
-                    <h5 class="card-title" style="margin-top:10px;">Nombre</h5>
-                    <input type="text" id="personaje" name="personaje" placeholder="Escribe el nombre..." >
-        </div>
-            <button class="btn btn-success btnClase" onclick="vistaMenu()">ELEGIR CLASE</button>
-            <div class="none" id="item" style="margin-top:10px;"  >
-                <select class="form-select " aria-label="Default select example " id="clase">
-                    <option selected>Elije clase</option>
-                    <option value="1">Mago</option>
-                    <option value="2">Guerrero</option>
-                    <option value="3">Tirador</option>
-                    <option value="4">Paladin</option>
-                </select>
-                <button class="btn btn-success" type="button" onclick="elegirClase()">Elegir</button>
+                <h5 class="card-title" style="margin-top:10px;">Nombre</h5>
+                <input type="text" id="personaje" name="personaje" placeholder="Escribe el nombre..." >
             </div>
-            
-            <button id="enviar" class="none" style="margin-top:10px;" type="button" onclick="enviar()">ENVIAR</button>
+                <button class="btn btn-success btnClase" onclick="vistaMenu()">ELEGIR CLASE</button>
+                <div class="none" id="item" style="margin-top:10px;"  >
+                    <select class="form-select " aria-label="Default select example " id="clase">
+                        <option selected>Elije clase</option>
+                        <option value="1">Mago</option>
+                        <option value="2">Guerrero</option>
+                        <option value="3">Tirador</option>
+                        <option value="4">Paladin</option>
+                    </select>
+                    <button class="btn btn-success" type="button" onclick="elegirClase()">Elegir</button>
+                </div>
+                <button id="enviar" class="none" style="margin-top:10px;" type="button" onclick="enviar()">ENVIAR</button>
             </div>
-        </div>
-        <div id="tarjetaEstadisticas" class="tarjetaEstadisticas"></div>
-        </div>
-        <div>
-            <label for="ciudad">Selecciona una ciudad para comenzar a jugar</label>
-            <input type="text" id="ciudad">
-            <button id="btnClima">Obtener Clima de la ciudad</button>
-            <output>
-                <p id="temperatura"></p>
-            </output>
-        </div>
-        <div class="containerDificultad">
-            <div class="dificultad">
-                <h5 class="card-title" style="margin-top:10px;">Nivel de dificultad</h5>
+            </div>
+                <div id="tarjetaEstadisticas" class="tarjetaEstadisticas">
+                    <h1 class="textodd">eLIGE TU PERSONAJE</h1>
+                </div>  
+            </div>
+            <a  class="textod" href="#batalla">IR A LA BATALLA</a>
+            <div id="batalla" class="containerDificultad">
+                <div class="dificultad">
+                <h5 class="card-title" style="margin-top:10px;color: white;">Nivel de dificultad</h5>
                 <select class="form-select" aria-label="Default select example " id="pelea">
-                    <option selected>Selecciona nivel de dificultad</option>
-                    <option value="1">Facil</option>
-                    <option value="2">Medio</option>
-                    <option value="3">Dificil</option>
-                </select>
-                <div class="btn">
-                    <button class="btn btn-dark" type="button" id="miBoton" onclick="dificultad()">Combatir</button>
-                    <button class="btn btn-danger" type="button" id="miBoton2" onclick="seleccionNo()">Retirarse</button>
+                        <option selected>Selecciona nivel de dificultad</option>
+                        <option value="1">Facil</option>
+                        <option value="2">Medio</option>
+                        <option value="3">Dificil</option>
+                    </select>
+                    <div class="btn">
+                        <button class="btn btn-dark" type="button" id="miBoton" onclick="dificultad()">Combatir</button>
+                        <button class="btn btn-danger" type="button" id="miBoton2" onclick="seleccionNo()">Retirarse</button>
+                    </div>
                 </div>
             </div>
-        </div>
-        
-    </div>
         </main>
     </body>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="JS/app.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="JS/app.js"></script>
 </html>
+
+
